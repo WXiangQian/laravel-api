@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\V1;
 
 
+use App\Transformers\UserInfoTransformer;
 
 class IndexController extends BaseController
 {
@@ -35,7 +36,7 @@ class IndexController extends BaseController
             'id' => 1,
             'name' => 'test测试',
         ];
-        return $this->responseData($data);
+        return $this->responseData(UserInfoTransformer::transform($data));
     }
 
 }

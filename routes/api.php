@@ -22,9 +22,9 @@ Route::options("/{any}", function () {
 })->where('any', '.*');
 
 Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
+    Route::group(['middleware' => 'api.auth'], function () {
+
+    });
     Route::get('home', 'IndexController@index');
 });
 
-Route::group(['middleware' => 'api.auth'], function () {
-
-});

@@ -9,13 +9,16 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '0ccdf99b8f62f02c52cba55802e0c2e7' => __DIR__ . '/..' . '/zircote/swagger-php/src/functions.php',
+        'ac0aa5b57142c92aeadc397fa46b9d39' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/helpers.php',
+        'b4e3f29b106af37a2bb239f73cdf68c7' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -43,6 +46,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
             'Symfony\\Polyfill\\Php70\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Routing\\' => 26,
@@ -54,6 +58,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Swagger\\' => 8,
         ),
         'R' => 
         array (
@@ -75,6 +80,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'L5Swagger\\' => 10,
         ),
         'J' => 
         array (
@@ -99,6 +105,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Annotations\\' => 28,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -154,6 +161,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Symfony\\Component\\Yaml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
@@ -198,6 +209,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Swagger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -234,6 +249,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'L5Swagger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/darkaonline/l5-swagger/src',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -269,6 +288,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
         ),
         'DeepCopy\\' => 
         array (
@@ -324,11 +347,14 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\SwaggerController' => __DIR__ . '/../..' . '/app/Http/Controllers/SwaggerController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AccessCrossOrigin' => __DIR__ . '/../..' . '/app/Http/Middleware/AccessCrossOrigin.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
+        'App\\Http\\Middleware\\ValidationResponse' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidationResponse.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -379,6 +405,25 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
         'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
+        'Doctrine\\Common\\Annotations\\Annotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
+        'Doctrine\\Common\\Annotations\\AnnotationException' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
+        'Doctrine\\Common\\Annotations\\AnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php',
+        'Doctrine\\Common\\Annotations\\AnnotationRegistry' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Attribute' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attribute.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Attributes' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attributes.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Enum' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Enum.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\IgnoreAnnotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/IgnoreAnnotation.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Required' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Required.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Target' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Target.php',
+        'Doctrine\\Common\\Annotations\\CachedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/CachedReader.php',
+        'Doctrine\\Common\\Annotations\\DocLexer' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/DocLexer.php',
+        'Doctrine\\Common\\Annotations\\DocParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+        'Doctrine\\Common\\Annotations\\FileCacheReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/FileCacheReader.php',
+        'Doctrine\\Common\\Annotations\\IndexedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/IndexedReader.php',
+        'Doctrine\\Common\\Annotations\\PhpParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/PhpParser.php',
+        'Doctrine\\Common\\Annotations\\Reader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Reader.php',
+        'Doctrine\\Common\\Annotations\\SimpleAnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/SimpleAnnotationReader.php',
+        'Doctrine\\Common\\Annotations\\TokenParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/TokenParser.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
@@ -1748,6 +1793,13 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
+        'L5Swagger\\Console\\GenerateDocsCommand' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/Console/GenerateDocsCommand.php',
+        'L5Swagger\\Exceptions\\L5SwaggerException' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/Exceptions/L5SwaggerException.php',
+        'L5Swagger\\Generator' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/Generator.php',
+        'L5Swagger\\Http\\Controllers\\SwaggerAssetController' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/Http/Controllers/SwaggerAssetController.php',
+        'L5Swagger\\Http\\Controllers\\SwaggerController' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/Http/Controllers/SwaggerController.php',
+        'L5Swagger\\L5SwaggerServiceProvider' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/L5SwaggerServiceProvider.php',
+        'L5Swagger\\SecurityDefinitions' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/SecurityDefinitions.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3007,6 +3059,47 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+        'Swagger\\Analyser' => __DIR__ . '/..' . '/zircote/swagger-php/src/Analyser.php',
+        'Swagger\\Analysis' => __DIR__ . '/..' . '/zircote/swagger-php/src/Analysis.php',
+        'Swagger\\Annotations\\AbstractAnnotation' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/AbstractAnnotation.php',
+        'Swagger\\Annotations\\Contact' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Contact.php',
+        'Swagger\\Annotations\\Definition' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Definition.php',
+        'Swagger\\Annotations\\Delete' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Delete.php',
+        'Swagger\\Annotations\\ExternalDocumentation' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/ExternalDocumentation.php',
+        'Swagger\\Annotations\\Get' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Get.php',
+        'Swagger\\Annotations\\Head' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Head.php',
+        'Swagger\\Annotations\\Header' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Header.php',
+        'Swagger\\Annotations\\Info' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Info.php',
+        'Swagger\\Annotations\\Items' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Items.php',
+        'Swagger\\Annotations\\License' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/License.php',
+        'Swagger\\Annotations\\Operation' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Operation.php',
+        'Swagger\\Annotations\\Options' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Options.php',
+        'Swagger\\Annotations\\Parameter' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Parameter.php',
+        'Swagger\\Annotations\\Patch' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Patch.php',
+        'Swagger\\Annotations\\Path' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Path.php',
+        'Swagger\\Annotations\\Post' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Post.php',
+        'Swagger\\Annotations\\Property' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Property.php',
+        'Swagger\\Annotations\\Put' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Put.php',
+        'Swagger\\Annotations\\Response' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Response.php',
+        'Swagger\\Annotations\\Schema' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Schema.php',
+        'Swagger\\Annotations\\SecurityScheme' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/SecurityScheme.php',
+        'Swagger\\Annotations\\Swagger' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Swagger.php',
+        'Swagger\\Annotations\\Tag' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Tag.php',
+        'Swagger\\Annotations\\Xml' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Xml.php',
+        'Swagger\\Context' => __DIR__ . '/..' . '/zircote/swagger-php/src/Context.php',
+        'Swagger\\Logger' => __DIR__ . '/..' . '/zircote/swagger-php/src/Logger.php',
+        'Swagger\\Processors\\AugmentDefinitions' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentDefinitions.php',
+        'Swagger\\Processors\\AugmentOperations' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentOperations.php',
+        'Swagger\\Processors\\AugmentParameters' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentParameters.php',
+        'Swagger\\Processors\\AugmentProperties' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentProperties.php',
+        'Swagger\\Processors\\BuildPaths' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/BuildPaths.php',
+        'Swagger\\Processors\\CleanUnmerged' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/CleanUnmerged.php',
+        'Swagger\\Processors\\HandleReferences' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/HandleReferences.php',
+        'Swagger\\Processors\\InheritProperties' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/InheritProperties.php',
+        'Swagger\\Processors\\MergeIntoSwagger' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/MergeIntoSwagger.php',
+        'Swagger\\Serializer' => __DIR__ . '/..' . '/zircote/swagger-php/src/Serializer.php',
+        'Swagger\\StaticAnalyser' => __DIR__ . '/..' . '/zircote/swagger-php/src/StaticAnalyser.php',
+        'Swagger\\Util' => __DIR__ . '/..' . '/zircote/swagger-php/src/Util.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
@@ -3562,6 +3655,18 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Symfony\\Component\\VarDumper\\Exception\\ThrowingCasterException' => __DIR__ . '/..' . '/symfony/var-dumper/Exception/ThrowingCasterException.php',
         'Symfony\\Component\\VarDumper\\Test\\VarDumperTestTrait' => __DIR__ . '/..' . '/symfony/var-dumper/Test/VarDumperTestTrait.php',
         'Symfony\\Component\\VarDumper\\VarDumper' => __DIR__ . '/..' . '/symfony/var-dumper/VarDumper.php',
+        'Symfony\\Component\\Yaml\\Command\\LintCommand' => __DIR__ . '/..' . '/symfony/yaml/Command/LintCommand.php',
+        'Symfony\\Component\\Yaml\\Dumper' => __DIR__ . '/..' . '/symfony/yaml/Dumper.php',
+        'Symfony\\Component\\Yaml\\Escaper' => __DIR__ . '/..' . '/symfony/yaml/Escaper.php',
+        'Symfony\\Component\\Yaml\\Exception\\DumpException' => __DIR__ . '/..' . '/symfony/yaml/Exception/DumpException.php',
+        'Symfony\\Component\\Yaml\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/yaml/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\Yaml\\Exception\\ParseException' => __DIR__ . '/..' . '/symfony/yaml/Exception/ParseException.php',
+        'Symfony\\Component\\Yaml\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/yaml/Exception/RuntimeException.php',
+        'Symfony\\Component\\Yaml\\Inline' => __DIR__ . '/..' . '/symfony/yaml/Inline.php',
+        'Symfony\\Component\\Yaml\\Parser' => __DIR__ . '/..' . '/symfony/yaml/Parser.php',
+        'Symfony\\Component\\Yaml\\Tag\\TaggedValue' => __DIR__ . '/..' . '/symfony/yaml/Tag/TaggedValue.php',
+        'Symfony\\Component\\Yaml\\Unescaper' => __DIR__ . '/..' . '/symfony/yaml/Unescaper.php',
+        'Symfony\\Component\\Yaml\\Yaml' => __DIR__ . '/..' . '/symfony/yaml/Yaml.php',
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Symfony\\Polyfill\\Php70\\Php70' => __DIR__ . '/..' . '/symfony/polyfill-php70/Php70.php',

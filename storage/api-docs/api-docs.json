@@ -1,0 +1,28 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "This is my website cool API",
+        "description": "Api description...",
+        "termsOfService": "",
+        "contact": {
+            "email": "contact@mysite.com"
+        },
+        "license": {
+            "name": "Private License",
+            "url": "URL to the license"
+        },
+        "version": "1.0.0"
+    },
+    "host": "api.host.com",
+    "basePath": "/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {},
+    "definitions": {},
+    "externalDocs": {
+        "description": "Find out more about my website",
+        "url": "http..."
+    }
+}

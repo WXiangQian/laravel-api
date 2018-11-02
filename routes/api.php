@@ -21,8 +21,8 @@ Route::options("/{any}", function () {
     return 'ok';
 })->where('any', '.*');
 
-Route::group(['prefix' => '/v2', 'namespace' => 'V2'], function () {
-
+Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
+    Route::get('home', 'IndexController@index');
 });
 
 Route::group(['middleware' => 'api.auth'], function () {

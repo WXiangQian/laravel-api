@@ -3,7 +3,7 @@
 
 ### 克隆仓库
 ```
-git clone git@github.com:qq175023117/laravel-api.git
+git clone git@github.com:WXiangQian/laravel-api.git
 ```
 
 ### 运行环境

@@ -26,5 +26,6 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
 
     });
     Route::get('home', 'IndexController@index');
+    Route::get('news', 'IndexController@news');
 });
 

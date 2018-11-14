@@ -61,7 +61,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'accessCrossOrigin' => \App\Http\Middleware\AccessCrossOrigin::class,
-//        'api.auth' => \App\Http\Middleware\ApiAuth::class,
+        'api.auth' => \App\Http\Middleware\ApiAuth::class,
         'validation.response' => \App\Http\Middleware\ValidationResponse::class,
     ];
 }

@@ -23,9 +23,11 @@ Route::options("/{any}", function () {
 
 Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::group(['middleware' => 'api.auth'], function () {
+        Route::get('news', 'IndexController@news');
 
     });
     Route::get('home', 'IndexController@index');
-    Route::get('news', 'IndexController@news');
+    Route::post('login', 'IndexController@login');
+    Route::post('logout', 'IndexController@logout');
 });
 

@@ -41,61 +41,6 @@ class IndexController extends BaseController
      */
     public function index()
     {
-        $urls = [
-            'https://blog.csdn.net/qq175023117/article/details/84067068',
-            'https://blog.csdn.net/qq175023117/article/details/83898955',
-            'https://blog.csdn.net/qq175023117/article/details/83986872',
-            'https://blog.csdn.net/qq175023117/article/details/83989255',
-            'https://blog.csdn.net/qq175023117/article/details/81668473',
-            'https://blog.csdn.net/qq175023117/article/details/81708763',
-            'https://blog.csdn.net/qq175023117/article/details/81742567',
-            'https://blog.csdn.net/qq175023117/article/details/81866873',
-            'https://blog.csdn.net/qq175023117/article/details/81908954',
-            'https://blog.csdn.net/qq175023117/article/details/81948900',
-            'https://blog.csdn.net/qq175023117/article/details/82260221',
-            'https://blog.csdn.net/qq175023117/article/details/82690603',
-            'https://blog.csdn.net/qq175023117/article/details/82734794',
-            'https://blog.csdn.net/qq175023117/article/details/82881877',
-            'https://blog.csdn.net/qq175023117/article/details/82977595',
-            'https://blog.csdn.net/qq175023117/article/details/83149299',
-            'https://blog.csdn.net/qq175023117/article/details/83653125',
-            'https://blog.csdn.net/qq175023117/article/details/83862171',
-            'https://blog.csdn.net/qq175023117/article/details/80681533',
-            'https://blog.csdn.net/qq175023117/article/details/80680777',
-            'https://blog.csdn.net/qq175023117/article/details/80931480',
-            'https://blog.csdn.net/qq175023117/article/details/80931383',
-            'https://blog.csdn.net/qq175023117/article/details/80847269',
-            'https://blog.csdn.net/qq175023117/article/details/80839821',
-            'https://blog.csdn.net/qq175023117/article/details/80839719',
-            'https://blog.csdn.net/qq175023117/article/details/80839605',
-            'https://blog.csdn.net/qq175023117/article/details/80839445',
-            'https://blog.csdn.net/qq175023117/article/details/80688659',
-            'https://blog.csdn.net/qq175023117/article/details/80693844',
-            'https://blog.csdn.net/qq175023117/article/details/80681391',
-            'https://blog.csdn.net/qq175023117/article/details/80681234',
-            'https://blog.csdn.net/qq175023117/article/details/80681180',
-            'https://blog.csdn.net/qq175023117/article/details/80681079',
-            'https://blog.csdn.net/qq175023117/article/details/80680837',
-            'https://blog.csdn.net/qq175023117/article/details/83862216'
-        ];
-
-        $key = array_rand($urls);
-
-        //初始化
-        $curl = curl_init();
-        //设置抓取的url
-        curl_setopt($curl, CURLOPT_URL, $urls[$key]);
-        //设置头文件的信息作为数据流输出
-        curl_setopt($curl, CURLOPT_HEADER, 0);
-        //设置获取的信息以文件流的形式返回，而不是直接输出。
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);//绕过ssl验证
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        //执行命令
-        $data = curl_exec($curl);
-        //关闭URL请求
-        curl_close($curl);
-        return $this->responseData($data);
         $data = [
             'id' => 1,
             'name' => 'test测试',

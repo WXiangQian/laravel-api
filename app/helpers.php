@@ -2,6 +2,51 @@
 /**
  * 全局函数调用文件
  */
+
+/**
+ * 冒泡排序（数组排序）
+ * @param $array
+ * @return bool
+ *
+ */
+function bubbleSort($array)
+{
+    $count = count( $array);
+    if ($count <= 0 ) return false;
+    for($i=0 ; $i<$count; $i ++){
+        for($j=$count-1 ; $j>$i; $j--){
+            if ($array[$j] < $array [$j-1]){
+                $tmp = $array[$j];
+                $array[$j] = $array[ $j-1];
+                $array [$j-1] = $tmp;
+            }
+        }
+    }
+    return $array;
+}
+
+/**
+ * 快速排序（数组排序）
+ * @param $array
+ * @return bool
+ *
+ */
+function quickSort($array)
+{
+    $count = count( $array);
+    if ($count <= 0 ) return false;
+    for($i=0 ; $i<$count; $i ++){
+        for($j=$count-1 ; $j>$i; $j--){
+            if ($array[$j] < $array [$j-1]){
+                $tmp = $array[$j];
+                $array[$j] = $array[ $j-1];
+                $array [$j-1] = $tmp;
+            }
+        }
+    }
+    return $array;
+}
+
 /**
  * 加密手机号
  * @param $data
@@ -38,7 +83,13 @@ function encryptedBankCardNumber($data)
     return $start . $asterisk . $end;
 }
 
-//生成无限极分类树
+/**
+ * 生成无限极分类树
+ * @param $arr
+ * @param string $primary
+ * @param string $parentId
+ * @return array
+ */
 function makeTree($arr,$primary = 'id', $parentId = 'pid'){
     $refer = [];
     $tree = [];
@@ -60,7 +111,7 @@ function makeTree($arr,$primary = 'id', $parentId = 'pid'){
 
 /**
  * 距离换算
- * @param $distance
+ * @param $distance 距离
  * @return string
  */
 function distanceUnitTransform($distance)
@@ -98,7 +149,13 @@ function removeHtml($string, $sublen)
     return $string;
 }
 
-// 从redis中取出手机号数据
+/**
+ * 从redis中取出手机号数据
+ * @param $mobile 手机号
+ * @param $type 类型
+ * @return \Illuminate\Cache\CacheManager|mixed
+ * @throws Exception
+ */
 function findSmsCacheValue($mobile, $type)
 {
     //从缓存中拿到验证码sms中的数据
@@ -107,7 +164,11 @@ function findSmsCacheValue($mobile, $type)
     return $cacheValue;
 }
 
-// 当数字小于10000时，用0在左边补全
+/**
+ * 当数字小于10000时，用0在左边补全
+ * @param $num 数字
+ * @return string
+ */
 function encryptNumber($num)
 {
     $date = date('Ymd', time());

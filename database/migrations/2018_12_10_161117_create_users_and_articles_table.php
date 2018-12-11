@@ -35,9 +35,10 @@ class CreateUsersAndArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->comment('用户id');
-            $table->integer('type')->comment('类型');
+            $table->integer('type_id')->comment('类型id');
             $table->string('title', 50)->comment('标题');
             $table->text('content')->comment('内容');
+            $table->integer('vote')->default(0)->comment('点赞量');
             $table->softDeletes();
             $table->timestamps();
         });

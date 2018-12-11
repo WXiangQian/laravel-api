@@ -22,6 +22,19 @@ cp .env.example .env
 php artisan key:generate
 ```
 
+### 配置好.env以后执行以下命令进行创建数据库
+(提示directory already exists 可忽略)
+
+```
+php artisan admin:install
+```
+
+### 如需测试数据，则执行以下命令填充数据库数据
+
+```
+php artisan db:seed
+```
+
 ### 生成网站链接
 ```
 php artisan serve

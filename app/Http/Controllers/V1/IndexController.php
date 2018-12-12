@@ -52,7 +52,7 @@ class IndexController extends BaseController
     /**
      * @SWG\Post(
      *      path="/login",
-     *      tags={"public"},
+     *      tags={"user"},
      *      operationId="login",
      *      summary="登陆",
      *      consumes={"application/json"},
@@ -76,7 +76,7 @@ class IndexController extends BaseController
      *              @SWG\Property(property="code", type="string",description="状态码"),
      *              @SWG\Property(property="message", type="string",description="提示信息"),
      *              @SWG\Property(property="data", type="object",
-     *
+     *                  @SWG\Property(property="access_token", type="string", description="token"),
      *              ),
      *          )
      *      ),

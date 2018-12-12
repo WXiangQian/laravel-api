@@ -16,7 +16,7 @@ class BaseController extends SwaggerController
      *   host="",
      *   basePath="/api/v1",
      *   @SWG\Info(
-     *     title="app",
+     *     title="laravel-api",
      *     version="1.0.0"
      *   ),
      * @SWG\SecurityScheme(

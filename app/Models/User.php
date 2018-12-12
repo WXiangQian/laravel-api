@@ -12,7 +12,7 @@ class User extends Authenticatable implements JWTSubject
     protected $table = 'users';
     protected $fillable = ['nickname', 'password', 'mobile'];
     #定义是否默认维护时间，默认是true.改为false，则以下时间相关设定无效
-    public $timestamps = false;
+    public $timestamps = true;
     protected $hidden = [
         'password',
     ];

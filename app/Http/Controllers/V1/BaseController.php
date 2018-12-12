@@ -42,19 +42,19 @@ class BaseController extends SwaggerController
         ], $status, [], JSON_UNESCAPED_UNICODE);
     }
 
-    public function responseSuccess($message = 'success')
+    public function responseSuccess($message = 'success', $status = 200)
     {
-        return $this->responseMessage(0, $message);
+        return $this->responseMessage(0, $message, $status);
     }
 
-    public function responseFailed($message = 'failed')
+    public function responseFailed($message = 'failed', $status = 500)
     {
-        return $this->responseMessage(2, $message);
+        return $this->responseMessage(1, $message, $status);
     }
 
-    public function responseError($message = 'error')
+    public function responseError($message = 'error', $status = 400)
     {
-        return $this->responseMessage(1, $message);
+        return $this->responseMessage(1, $message, $status);
     }
 
     public function responseMessage($code, $message, $status = 200)

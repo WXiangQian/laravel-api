@@ -64,7 +64,7 @@ class IndexController extends BaseController
      *          required=true,
      *          @SWG\Schema(
      *              type="object",
-     *              @SWG\Property(property="email",description="邮箱",type="string"),
+     *              @SWG\Property(property="mobile",description="手机号",type="string"),
      *              @SWG\Property(property="password",description="密码",type="string"),
      *          )
      *      ),
@@ -86,23 +86,21 @@ class IndexController extends BaseController
     {
         // 验证规则，由于业务需求，这里我更改了一下登录的用户名，使用手机号码登录
         $rules = [
-            'email'   => [
-                'required',
-            ],
+            'mobile'   => 'required',
             'password' => 'required|string|min:6|max:20',
         ];
 
         // 验证参数，如果验证失败，则会抛出 ValidationException 的异常
         $params = $this->validate($request, $rules);
-        $user = User::where('email',$params['email'])->first();
-        // 使用 Auth 登录用户，如果登录成功，则返回 201 的 code 和 token，如果登录失败则返回
-        $token =  $this->auth->fromUser($user);
-        if ($token) {
-            return $this->responseData(['access_token' => $token]);
-        } else {
-            $this->responseError('账号或密码错误');
+        $user = User::where('mobile',$params['mobile'])->first();
+        if (!$user) {
+            return $this->responseNotFound('账号或密码错误');
         }
 
+        // 使用 Auth 登录用户，如果登录成功，则返回 201 的 code 和 token，如果登录失败则返回
+        $token =  $this->auth->fromUser($user);
+
+        return $this->responseData(['access_token' => $token]);
     }
 
 

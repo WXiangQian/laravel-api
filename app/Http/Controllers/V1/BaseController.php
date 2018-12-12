@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class BaseController extends SwaggerController
 {
-    use AuthenticatesUsers ;
+//    use AuthenticatesUsers ;
 
     /**
      * @SWG\Swagger(

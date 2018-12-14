@@ -26,8 +26,9 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
         Route::get('news', 'IndexController@news');
 
     });
-    Route::get('home', 'IndexController@index');
-    Route::post('login', 'IndexController@login');
-    Route::post('register', 'IndexController@register');
+    Route::get('/home', 'IndexController@index');
+    Route::post('/login', 'IndexController@login');
+    Route::post('/register', 'IndexController@register');
+    Route::get('/news/list', 'ArticleController@getNewsList');
 });
 

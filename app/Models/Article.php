@@ -8,6 +8,6 @@ class Article extends BaseModel
 {
     use SoftDeletes;
     protected $table = 'articles';
-
+    protected $hidden = ['deleted_at'];
 
 }

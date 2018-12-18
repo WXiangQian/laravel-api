@@ -27,7 +27,7 @@ abstract class BaseTransformer
                 }, $collection['lists']);
             }
 
-             return $collection;
+            return $collection;
         }
 
         return array_map(function ($data) {

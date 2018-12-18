@@ -80,7 +80,7 @@ class IndexController extends BaseController
     public function login(Request $request)
     {
         $rules = [
-            'mobile'   => 'required',
+            'mobile' => 'required',
             'password' => 'required|string|min:6|max:20',
         ];
 

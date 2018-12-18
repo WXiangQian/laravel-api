@@ -24,17 +24,19 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'mobile'             => 'required|regex:/^1[0-9]{10}$/|unique:users,mobile',
-            'password'           => 'required|between:6,16',
+            'mobile' => 'required|regex:/^1[0-9]{10}$/|unique:users,mobile',
+            'password' => 'required|between:6,16',
         ];
     }
-    public function messages(){
+
+    public function messages()
+    {
         return [
-            'mobile.required'           => '请填写手机号',
-            'mobile.regex'              => '手机号格式不正确',
-            'mobile.unique'             => '手机号已注册',
-            'password.required'         => '请填写密码',
-            'password.between'          => '请注意密码格式',
+            'mobile.required' => '请填写手机号',
+            'mobile.regex' => '手机号格式不正确',
+            'mobile.unique' => '手机号已注册',
+            'password.required' => '请填写密码',
+            'password.between' => '请注意密码格式',
         ];
     }
 }

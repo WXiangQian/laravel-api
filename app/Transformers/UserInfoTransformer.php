@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Transformers ;
-
+namespace App\Transformers;
 
 
 class UserInfoTransformer extends BaseTransformer
@@ -10,7 +9,6 @@ class UserInfoTransformer extends BaseTransformer
     {
         return $item;
     }
-
 
 
 }

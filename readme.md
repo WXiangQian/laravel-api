@@ -42,6 +42,11 @@ php artisan serve
 Laravel development server started: <http://127.0.0.1:8000>
 http://127.0.0.1:8000为该网站的临时地址
 ```
+描述 | 详情
+--- |---
+log地址 | http://127.0.0.1:8000/wxq/logs
+swagger接口文档 | http://127.0.0.1:8000/swagger
+接口文档json数据 | http://127.0.0.1:8000//doc/json
 
 [提交问题请点击](https://github.com/WXiangQian/laravel-api/issues)
 

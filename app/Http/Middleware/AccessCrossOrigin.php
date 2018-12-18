@@ -10,8 +10,8 @@ class AccessCrossOrigin
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
@@ -27,21 +27,19 @@ class AccessCrossOrigin
             'Access-Control-Allow-Headers' => 'x-requested-with,Origin, Content-Type, Cookie, Accept, Authorization, Device-Id, x-csrf-token',
         ];
 
-        if($response instanceof $IlluminateResponse) {
+        if ($response instanceof $IlluminateResponse) {
             foreach ($headers as $key => $value) {
                 $response->header($key, $value);
             }
             return $response;
         }
 
-        if($response instanceof $SymfonyResopnse) {
+        if ($response instanceof $SymfonyResopnse) {
             foreach ($headers as $key => $value) {
                 $response->headers->set($key, $value);
             }
             return $response;
         }
-
-
 
 
         return $response;

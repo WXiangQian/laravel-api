@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Middleware;
 
 
@@ -13,20 +14,20 @@ class ApiAuth
     public function handle($request, Closure $next)
     {
         try {
-            if (! $user = JWTAuth::parseToken()->authenticate()) {  //获取到用户数据，并赋值给$user
+            if (!$user = JWTAuth::parseToken()->authenticate()) {  //获取到用户数据，并赋值给$user
                 return response()->json([
                     'errcode' => 1004,
                     'errmsg' => 'user not found'
 
                 ], 404);
             }
-        return $next($request);
+            return $next($request);
 
-    } catch (TokenExpiredException $e) {
+        } catch (TokenExpiredException $e) {
 
             return response()->json([
                 'errcode' => 1003,
-                'errmsg' => 'token 过期' , //token已过期
+                'errmsg' => 'token 过期', //token已过期
             ]);
 
         } catch (TokenInvalidException $e) {
@@ -40,7 +41,7 @@ class ApiAuth
 
             return response()->json([
                 'errcode' => 1001,
-                'errmsg' => '缺少token' , //token为空
+                'errmsg' => '缺少token', //token为空
             ]);
 
         }

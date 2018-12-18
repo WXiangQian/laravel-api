@@ -12,9 +12,9 @@
 */
 
 Route::get('/swagger', function () {
-    return view('vendor.l5-swagger.index',['urlToDocs' => '/doc/json']);
+    return view('vendor.l5-swagger.index', ['urlToDocs' => '/doc/json']);
 });
 Route::group(['prefix' => 'doc'], function () {
     Route::get('json', 'SwaggerController@getJSON');
 });
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+Route::get('/wxq/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

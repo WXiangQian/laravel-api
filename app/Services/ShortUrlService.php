@@ -13,7 +13,7 @@ class ShortUrlService
     public static function getSinaShortUrl($urlLong)
     {
         // $source 申请应用的AppKey
-        $source = config('app.sina_secret');
+        $source = config('app.sina_key');
         // 参数检查
         if (!$source || !$urlLong) {
             return false;

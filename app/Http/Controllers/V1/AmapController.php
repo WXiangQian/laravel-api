@@ -5,9 +5,45 @@ namespace App\Http\Controllers\V1;
 
 use App\Services\AmapService;
 use Illuminate\Http\Request;
+use Torann\GeoIP\Facades\GeoIP;
 
 class AmapController extends BaseController
 {
+    /**
+     * @SWG\Get(
+     *      path="/ip",
+     *      tags={"public"},
+     *      operationId="ip",
+     *      summary="获取用户ip",
+     *      consumes={"application/json"},
+     *      produces={"application/json"},
+     *      @SWG\Response(
+     *          response=200,
+     *          description="",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="code", type="string",description="状态码"),
+     *              @SWG\Property(property="message", type="string",description="提示信息"),
+     *              @SWG\Property(property="data", type="object",
+     *                  @SWG\Property(property="ip", type="string", description="ip"),
+     *                  @SWG\Property(property="iso_code", type="string", description="标准国家码"),
+     *                  @SWG\Property(property="country", type="string", description="国家"),
+     *                  @SWG\Property(property="city", type="string", description="城市"),
+     *                  @SWG\Property(property="postal_code", type="string", description="邮政编码"),
+     *                  @SWG\Property(property="lat", type="string", description="纬度"),
+     *                  @SWG\Property(property="lon", type="string", description="精度"),
+     *                  @SWG\Property(property="timezone", type="string", description="时区"),
+     *              ),
+     *          )
+     *      ),
+     * )
+     */
+    public function getIp(Request $request)
+    {
+        $ip = $request->ip();
+        $location = GeoIP::getLocation($ip)->toArray();
+        return $this->responseData($location);
+    }
 
     /**
      * @SWG\Post(

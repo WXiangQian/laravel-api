@@ -36,5 +36,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     });
     // amap
     Route::post('/amap/regeo', 'AmapController@getPosition');
+    // sina
+    Route::post('/sina/short_url', 'ShortUrlController@getShortUrl');
 });
 

@@ -108,6 +108,8 @@ return [
 
     'amap_key' => env('AMAP_KEY'),
 
+    'sina_secret' => env('SINA_SECRET'),
+
     'cipher' => 'AES-256-CBC',
 
     /*

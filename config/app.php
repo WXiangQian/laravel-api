@@ -106,6 +106,8 @@ return [
 
     'key' => env('APP_KEY'),
 
+    'amap_key' => env('AMAP_KEY'),
+
     'cipher' => 'AES-256-CBC',
 
     /*

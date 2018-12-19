@@ -20,6 +20,7 @@ cp .env.example .env
 ### 生成秘钥
 ```
 php artisan key:generate
+php artisan jwt:secret
 ```
 
 ### 配置好.env以后执行以下命令进行创建数据库
@@ -46,7 +47,7 @@ http://127.0.0.1:8000为该网站的临时地址
 --- |---
 log地址 | http://127.0.0.1:8000/wxq/logs
 swagger接口文档 | http://127.0.0.1:8000/swagger
-接口文档json数据 | http://127.0.0.1:8000//doc/json
+接口文档json数据 | http://127.0.0.1:8000/doc/json
 
 [提交问题请点击](https://github.com/WXiangQian/laravel-api/issues)
 

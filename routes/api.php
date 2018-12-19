@@ -27,8 +27,14 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
 
     });
     Route::get('/home', 'IndexController@index');
+    // login register
     Route::post('/login', 'IndexController@login');
     Route::post('/register', 'IndexController@register');
-    Route::get('/news/list', 'ArticleController@getNewsList');
+    // news
+    Route::group(['prefix' => '/news'], function () {
+        Route::get('/list', 'ArticleController@getNewsList');
+    });
+    // amap
+    Route::post('/amap/regeo', 'AmapController@getPosition');
 });
 

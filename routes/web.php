@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('/swagger', function () {
     return view('vendor.l5-swagger.index', ['urlToDocs' => '/doc/json']);
 });

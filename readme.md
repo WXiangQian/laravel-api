@@ -23,6 +23,13 @@ php artisan key:generate
 php artisan jwt:secret
 ```
 
+```
+npm install
+npm run dev
+npm run watch
+npm i element-ui -S
+```
+
 ### 配置好.env以后执行以下命令进行创建数据库
 (提示directory already exists 可忽略)
 

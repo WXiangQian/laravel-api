@@ -24,10 +24,11 @@ php artisan jwt:secret
 ```
 
 ```
-npm install
-npm run dev
+npm install 安装节点依赖项
+npm run dev 编译
 npm run watch
-npm i element-ui -S
+npm run hot  热模块替换（或热重新加载）
+npm i element-ui -S 安装element-ui
 ```
 
 ### 配置好.env以后执行以下命令进行创建数据库

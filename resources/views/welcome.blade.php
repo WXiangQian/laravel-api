@@ -9,9 +9,9 @@
 </head>
 <body>
 <div id="app">
-    <example-component></example-component>
+    {{--<example-component></example-component>--}}
+    <test></test>
 </div>
-
-<script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>`
 </body>
 </html>

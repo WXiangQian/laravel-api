@@ -25,12 +25,16 @@ php artisan jwt:secret
 
 ```
 npm install 安装节点依赖项
-npm run dev 编译
+npm run dev 
 npm run watch
 npm run hot  热模块替换（或热重新加载）
 npm i element-ui -S 安装element-ui
 ```
-
+```
+请记住，npm run dev每次更改Vue组件时都应该运行该命令。
+或者
+您可以运行npm run watch命令来监视每次修改组件并自动重新编译它们。
+```
 ### 配置好.env以后执行以下命令进行创建数据库
 (提示directory already exists 可忽略)
 

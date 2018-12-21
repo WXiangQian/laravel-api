@@ -184,6 +184,7 @@ return [
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
+        \Jcc\LaravelVote\VoteServiceProvider::class,
     ],
 
     /*

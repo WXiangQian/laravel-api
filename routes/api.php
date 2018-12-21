@@ -36,8 +36,9 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::post('/register', 'UserController@register');
 
     // news
-    Route::group(['prefix' => '/news'], function () {
-        Route::get('/list', 'ArticleController@getNewsList');
+    Route::group(['prefix' => '/article'], function () {
+        Route::get('/list', 'ArticleController@getArticleList');
+        Route::get('/info', 'ArticleController@getArticleInfo');
     });
 
     // amap

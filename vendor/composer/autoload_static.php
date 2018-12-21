@@ -97,6 +97,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         ),
         'J' => 
         array (
+            'Jcc\\LaravelVote\\' => 16,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -302,6 +303,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'L5Swagger\\' => 
         array (
             0 => __DIR__ . '/..' . '/darkaonline/l5-swagger/src',
+        ),
+        'Jcc\\LaravelVote\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jcc/laravel-vote/src',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
@@ -1906,6 +1911,9 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
+        'Jcc\\LaravelVote\\CanBeVoted' => __DIR__ . '/..' . '/jcc/laravel-vote/src/CanBeVoted.php',
+        'Jcc\\LaravelVote\\Vote' => __DIR__ . '/..' . '/jcc/laravel-vote/src/Vote.php',
+        'Jcc\\LaravelVote\\VoteServiceProvider' => __DIR__ . '/..' . '/jcc/laravel-vote/src/VoteServiceProvider.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
         'L5Swagger\\Console\\GenerateDocsCommand' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/Console/GenerateDocsCommand.php',
         'L5Swagger\\Exceptions\\L5SwaggerException' => __DIR__ . '/..' . '/darkaonline/l5-swagger/src/Exceptions/L5SwaggerException.php',

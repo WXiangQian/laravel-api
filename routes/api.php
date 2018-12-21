@@ -22,21 +22,28 @@ Route::options("/{any}", function () {
 })->where('any', '.*');
 
 Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
+
     Route::group(['middleware' => 'api.auth'], function () {
         Route::get('news', 'IndexController@news');
 
     });
+
+    // index
     Route::get('/home', 'IndexController@index');
+
     // login register
-    Route::post('/login', 'IndexController@login');
-    Route::post('/register', 'IndexController@register');
+    Route::post('/login', 'UserController@login');
+    Route::post('/register', 'UserController@register');
+
     // news
     Route::group(['prefix' => '/news'], function () {
         Route::get('/list', 'ArticleController@getNewsList');
     });
+
     // amap
     Route::post('/amap/regeo', 'AmapController@getPosition');
-    Route::get('/ip', 'AmapController@getIp');
+    Route::get('/location', 'AmapController@getLocation');
+
     // sina
     Route::post('/sina/short_url', 'ShortUrlController@getShortUrl');
 });

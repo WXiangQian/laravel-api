@@ -11,10 +11,10 @@ class AmapController extends BaseController
 {
     /**
      * @SWG\Get(
-     *      path="/ip",
+     *      path="/location",
      *      tags={"public"},
-     *      operationId="ip",
-     *      summary="获取用户ip",
+     *      operationId="location",
+     *      summary="获取用户地理位置",
      *      consumes={"application/json"},
      *      produces={"application/json"},
      *      @SWG\Response(
@@ -38,7 +38,7 @@ class AmapController extends BaseController
      *      ),
      * )
      */
-    public function getIp(Request $request)
+    public function getLocation(Request $request)
     {
         $ip = $request->ip();
         $location = GeoIP::getLocation($ip)->toArray();

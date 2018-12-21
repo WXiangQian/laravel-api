@@ -38,7 +38,6 @@ class CreateUsersAndArticlesTable extends Migration
             $table->integer('type_id')->comment('类型id');
             $table->string('title', 50)->comment('标题');
             $table->text('content')->comment('内容');
-            $table->integer('vote')->default(0)->comment('点赞量');
             $table->softDeletes();
             $table->timestamps();
         });

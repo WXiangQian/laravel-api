@@ -13,6 +13,7 @@ class ApiAuth
 {
     public function handle($request, Closure $next)
     {
+
         try {
             if (!$user = JWTAuth::parseToken()->authenticate()) {  //获取到用户数据，并赋值给$user
                 return response()->json([

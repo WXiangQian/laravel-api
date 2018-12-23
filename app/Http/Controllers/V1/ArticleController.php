@@ -46,7 +46,7 @@ class ArticleController extends BaseController
 
     /**
      * @SWG\Get(
-     *      path="article/info",
+     *      path="/article/info",
      *      tags={"article"},
      *      operationId="article_info",
      *      summary="获取文章详情",
@@ -85,12 +85,13 @@ class ArticleController extends BaseController
 
     /**
      * @SWG\Get(
-     *      path="article/info/vote",
+     *      path="/article/info/vote",
      *      tags={"article"},
      *      operationId="article_info_vote",
      *      summary="点赞文章详情",
      *      consumes={"application/json"},
      *      produces={"application/json"},
+     *      security={{"api_key": {"scope"}}},
      *      @SWG\Parameter(in="query",name="id",description="id",required=true,type="integer",),
      *      @SWG\Response(
      *          response=200,

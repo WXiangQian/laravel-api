@@ -83,5 +83,52 @@ class ArticleController extends BaseController
         return $this->responseData(ArticleTransformer::transform($article));
     }
 
+    /**
+     * @SWG\Get(
+     *      path="article/info/vote",
+     *      tags={"article"},
+     *      operationId="article_info_vote",
+     *      summary="点赞文章详情",
+     *      consumes={"application/json"},
+     *      produces={"application/json"},
+     *      @SWG\Parameter(in="query",name="id",description="id",required=true,type="integer",),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="code", type="string",description="状态码"),
+     *              @SWG\Property(property="message", type="string",description="提示信息"),
+     *              @SWG\Property(property="data", type="object",
+     *              ),
+     *          )
+     *      ),
+     * )
+     */
+    public function voteArticle(Request $request)
+    {
+        $id = $request->input('id');
+        $user = $request->user();
+        $article = Article::where('id', $id)->first();
+        if (!$article) {
+            return $this->responseNotFound('没有找到匹配的文章');
+        }
 
+        // 判断是否已点赞
+        if ($user->hasVoted($article)) {
+            // 取消点赞
+            if ($user->cancelVote($article)) {
+                return $this->responseSuccess('文章取消点赞成功');
+            } else {
+                return $this->responseSuccess('文章取消点赞失败');
+            }
+        } else {
+            // 点赞
+            if ($user->upVote($article)) {
+                return $this->responseSuccess('文章点赞成功');
+            } else {
+                return $this->responseSuccess('文章点赞失败');
+            }
+        }
+    }
 }

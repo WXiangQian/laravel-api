@@ -4,7 +4,9 @@ namespace App\Http\Controllers\V1;
 
 
 use App\Http\Requests\RegisterRequest;
+use App\Models\Article;
 use App\Models\User;
+use App\Transformers\ArticleTransformer;
 use Illuminate\Http\Request;
 use JWTAuth;
 
@@ -124,5 +126,39 @@ class UserController extends BaseController
         ]);
     }
 
+    /**
+     * @SWG\Get(
+     *      path="/user/vote",
+     *      tags={"user"},
+     *      operationId="user_vote",
+     *      summary="获取用户已点赞的记录",
+     *      consumes={"application/json"},
+     *      produces={"application/json"},
+     *      security={{"api_key": {"scope"}}},
+     *      @SWG\Response(
+     *          response=200,
+     *          description="",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="code", type="string",description="状态码"),
+     *              @SWG\Property(property="message", type="string",description="提示信息"),
+     *              @SWG\Property(property="data", type="object",
+     *                  @SWG\Property(property="id", type="integer", description="id"),
+     *                  @SWG\Property(property="type", type="string", description="文章类型"),
+     *                  @SWG\Property(property="title", type="string", description="标题"),
+     *                  @SWG\Property(property="content", type="string", description="内容"),
+     *                  @SWG\Property(property="vote", type="string", description="点赞量"),
+     *              ),
+     *          )
+     *      ),
+     * )
+     */
+    public function getVoteArticleByUserId(Request $request)
+    {
+        $user = $request->user();
 
+        // 获取用户已点赞的记录
+        $articles = $user->votedItems(Article::class)->get()->toArray();
+        return $this->responseData(ArticleTransformer::transforms($articles));
+    }
 }

@@ -35,6 +35,13 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::post('/login', 'UserController@login');
     Route::post('/register', 'UserController@register');
 
+    //user
+    Route::group(['prefix' => '/user'], function () {
+        Route::group(['middleware' => 'api.auth'], function () {
+            Route::get('/vote', 'UserController@getVoteArticleByUserId');
+        });
+    });
+
     // news
     Route::group(['prefix' => '/article'], function () {
         Route::get('/list', 'ArticleController@getArticleList');

@@ -99,8 +99,8 @@ return [
     | systems in place to revoke the token if necessary.
     |
     */
-
-    'ttl' => env('JWT_TTL', 60),
+                        // 60分钟*24小时*5天
+    'ttl' => env('JWT_TTL', 60*24*5),
 
     /*
     |--------------------------------------------------------------------------

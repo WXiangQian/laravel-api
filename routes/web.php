@@ -22,3 +22,6 @@ Route::group(['prefix' => 'doc'], function () {
     Route::get('json', 'SwaggerController@getJSON');
 });
 Route::get('/wxq/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+Route::get('/article', function () {
+    return view('home.article.list');
+});

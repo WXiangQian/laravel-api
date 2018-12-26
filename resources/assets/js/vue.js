@@ -1,5 +1,6 @@
 import exampleComponent from './components/ExampleComponent.vue'
 import test from './components/Test.vue'
+import articles from './components/Articles.vue'
 
 import ElementUI from 'element-ui';
 
@@ -16,6 +17,7 @@ new Vue({
     components: {
         exampleComponent,
         test,
+        articles,
     },
 
     mounted() {

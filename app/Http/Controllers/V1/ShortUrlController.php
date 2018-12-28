@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\V1;
 
 
+use App\Http\Requests\UrlRequest;
 use App\Services\ShortUrlService;
 use Illuminate\Http\Request;
 
@@ -42,7 +43,7 @@ class ShortUrlController extends BaseController
      *      ),
      * )
      */
-    public function getShortUrl(Request $request)
+    public function getShortUrl(UrlRequest $request)
     {
         $urlLong = $request->input('url_long','');
         $shortUrl = ShortUrlService::getSinaShortUrl($urlLong);

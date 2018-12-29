@@ -1,6 +1,3 @@
-<el-row>
-   <el-col :span="24"><div class="grid-content bg-purple-dark">1111</div></el-col>
-</el-row>
 <template>
    <el-table
            :data="articles"
@@ -50,7 +47,7 @@
 
             axios.get(url, {})
                 .then(response => {
-                    this.articles =  response.data.data
+                    this.articles =  response.data.data.lists
                 })
 
         },

@@ -47986,7 +47986,6 @@ var Component = normalizeComponent(
 )
 Component.options.__file = "resources/assets/js/components/Articles.vue"
 
-
 /* hot reload */
 if (false) {(function () {
   var hotAPI = require("vue-hot-reload-api")
@@ -48094,9 +48093,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -48105,7 +48101,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var url = '/api/v1/article/list';
 
         axios.get(url, {}).then(function (response) {
-            _this.articles = response.data.data;
+            _this.articles = response.data.data.lists;
         });
     },
 

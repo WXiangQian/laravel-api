@@ -39,7 +39,7 @@ class ArticleController extends BaseController
      */
     public function getArticleList()
     {
-        $articles = Article::orderBy('id', 'DESC')->get();
+        $articles = Article::orderBy('id', 'DESC')->paginate(3);
 
         return $this->responseData(ArticleTransformer::transforms($articles));
     }

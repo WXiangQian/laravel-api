@@ -50,7 +50,7 @@ class AmapController extends BaseController
      *      path="/amap/regeo",
      *      tags={"public"},
      *      operationId="amap_regeo",
-     *      summary="根据经纬度获取地理位置-高德地图",
+     *      summary="根据经纬度获取地理位置-高德地图-逆地理编码",
      *      consumes={"application/json"},
      *      produces={"application/json"},
      *     @SWG\Parameter(

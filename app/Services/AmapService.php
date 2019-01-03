@@ -13,7 +13,7 @@ class AmapService
      * @param string $city 查询城市，可选：城市中文、中文全拼、citycode、adcode
      * @return array
      */
-    public static function geo($address = '', $city = '北京')
+    public static function geo($address, $city)
     {
         $key = config('app.amap_key');
         /**

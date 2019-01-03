@@ -52,6 +52,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     });
 
     // amap
+    Route::post('/amap/geo', 'AmapController@getLonAndLat');
     Route::post('/amap/regeo', 'AmapController@getPosition');
     Route::get('/location', 'AmapController@getLocation');
 

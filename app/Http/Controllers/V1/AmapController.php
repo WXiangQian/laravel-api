@@ -98,4 +98,15 @@ class AmapController extends BaseController
         return $this->responseData($position);
     }
 
+
+    public function getLonAndLat(Request $request)
+    {
+        $address = $request->input('address','');
+        $city = $request->input('city','');
+
+        $position = AmapService::geo($address, $city);
+
+        return $this->responseData($position);
+    }
+
 }

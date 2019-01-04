@@ -98,7 +98,51 @@ class AmapController extends BaseController
         return $this->responseData($position);
     }
 
-
+    /**
+     * @SWG\Post(
+     *      path="/amap/geo",
+     *      tags={"public"},
+     *      operationId="amap_geo",
+     *      summary="根据地址获取经纬度类的信息-高德地图-地理编码",
+     *      consumes={"application/json"},
+     *      produces={"application/json"},
+     *     @SWG\Parameter(
+     *          in="body",
+     *          name="data",
+     *          description="",
+     *          required=true,
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="address",description="填写结构化地址信息:省份＋城市＋区县＋城镇＋乡村＋街道＋门牌号码",type="string"),
+     *              @SWG\Property(property="city",description="查询城市，可选：城市中文、中文全拼、citycode、adcode",type="string"),
+     *          )
+     *      ),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="code", type="string",description="状态码"),
+     *              @SWG\Property(property="message", type="string",description="提示信息"),
+     *              @SWG\Property(property="data", type="object",
+     *                  @SWG\Property(property="status", type="string", description="0表示请求失败；1表示请求成功"),
+     *                  @SWG\Property(property="count", type="string", description="返回结果数目"),
+     *                  @SWG\Property(property="info", type="string", description="当status为0时，info会返回具体错误原因，否则返回“OK”"),
+     *                  @SWG\Property(property="geocodes", type="array",description="地理编码信息列表",
+     *                      @SWG\Items(type="object",
+     *                          @SWG\Property(property="formatted_address", type="string",description="省＋市＋区县＋城镇＋乡村＋街道＋门牌"),
+     *                          @SWG\Property(property="province", type="string",description="地址所在的省份名"),
+     *                          @SWG\Property(property="city", type="string",description="地址所在的城市名"),
+     *                          @SWG\Property(property="citycode", type="string",description="城市编码"),
+     *                          @SWG\Property(property="district", type="string",description="地址所在的区"),
+     *                          @SWG\Property(property="location", type="string",description="坐标点-经度，纬度"),
+     *                      ),
+     *                  ),
+     *              ),
+     *          )
+     *      ),
+     * )
+     */
     public function getLonAndLat(Request $request)
     {
         $address = $request->input('address','');

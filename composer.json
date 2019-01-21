@@ -18,6 +18,7 @@
     "rap2hpoutre/laravel-log-viewer": "^0.22.1",
     "torann/geoip": "^1.0",
     "tymon/jwt-auth": "1.0.0-rc.1",
+    "wythe/logistics": "^0.0.3",
     "zircote/swagger-php": "2.*"
   },
   "require-dev": {

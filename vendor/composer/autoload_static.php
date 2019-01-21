@@ -34,6 +34,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         ),
         'W' => 
         array (
+            'Wythe\\Logistics\\' => 16,
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
@@ -147,6 +148,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
+        ),
+        'Wythe\\Logistics\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wythe/logistics/src',
         ),
         'Whoops\\' => 
         array (
@@ -3972,6 +3977,17 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'Wythe\\Logistics\\Channel\\BaiduChannel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/BaiduChannel.php',
+        'Wythe\\Logistics\\Channel\\Channel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/Channel.php',
+        'Wythe\\Logistics\\Channel\\IckdChannel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/IckdChannel.php',
+        'Wythe\\Logistics\\Channel\\Kuaidi100Channel' => __DIR__ . '/..' . '/wythe/logistics/src/Channel/Kuaidi100Channel.php',
+        'Wythe\\Logistics\\Exceptions\\Exception' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/Exception.php',
+        'Wythe\\Logistics\\Exceptions\\HttpException' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/HttpException.php',
+        'Wythe\\Logistics\\Exceptions\\InvalidArgumentException' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/InvalidArgumentException.php',
+        'Wythe\\Logistics\\Exceptions\\NoQueryAvailableException' => __DIR__ . '/..' . '/wythe/logistics/src/Exceptions/NoQueryAvailableException.php',
+        'Wythe\\Logistics\\Factory' => __DIR__ . '/..' . '/wythe/logistics/src/Factory.php',
+        'Wythe\\Logistics\\Logistics' => __DIR__ . '/..' . '/wythe/logistics/src/Logistics.php',
+        'Wythe\\Logistics\\Traits\\HttpRequest' => __DIR__ . '/..' . '/wythe/logistics/src/Traits/HttpRequest.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf012b56a54f514b9e1f6bfe458b6ff3",
+    "content-hash": "8d56d7568f4f6f1c9f8584eada9df2d9",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -3108,6 +3108,46 @@
                 "environment"
             ],
             "time": "2018-07-29T20:33:41+00:00"
+        },
+        {
+            "name": "wythe/logistics",
+            "version": "v0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uuk020/logistics.git",
+                "reference": "6ab54e9f6549c9ce5f3fd835b8f45f48cc1099a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uuk020/logistics/zipball/6ab54e9f6549c9ce5f3fd835b8f45f48cc1099a5",
+                "reference": "6ab54e9f6549c9ce5f3fd835b8f45f48cc1099a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2",
+                "phpunit/phpunit": "~6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wythe\\Logistics\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wythe",
+                    "email": "wythe.huangw@gmail.com"
+                }
+            ],
+            "description": "查询快递物流信息",
+            "time": "2019-01-17T16:23:20+00:00"
         },
         {
             "name": "zircote/swagger-php",

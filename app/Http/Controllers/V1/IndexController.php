@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\V1;
 
 use App\Transformers\UserInfoTransformer;
+use Illuminate\Http\Request;
+use Wythe\Logistics\Logistics;
 
 class IndexController extends BaseController
 {
@@ -38,4 +40,15 @@ class IndexController extends BaseController
         return $this->responseData(UserInfoTransformer::transform($data));
     }
 
+    public function express(Request $request)
+    {
+        $code = $request->input('code', '');
+        if (!$code) {
+            return $this->responseError('请输入要查询的快递单号');
+        }
+        $logistics = new Logistics();
+
+        $data = $logistics->query($code, 'kuaidi100');
+        return $this->responseData($data);
+    }
 }

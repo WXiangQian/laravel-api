@@ -38,6 +38,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
 
     // hashids
     Route::post('/hash_ids/encode', 'HashIdsController@hashIdsEncode');
+    Route::post('/hash_ids/decode', 'HashIdsController@hashIdsDecode');
 
     //user
     Route::group(['prefix' => '/user'], function () {

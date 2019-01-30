@@ -47,5 +47,44 @@ class HashIdsController extends BaseController
         return $this->responseData($hashId);
     }
 
+    /**
+     * @SWG\Post(
+     *      path="/hash_ids/decode",
+     *      tags={"public"},
+     *      operationId="hash_ids_decode",
+     *      summary="hashids解密",
+     *      consumes={"application/json"},
+     *      produces={"application/json"},
+     *     @SWG\Parameter(
+     *          in="body",
+     *          name="data",
+     *          description="",
+     *          required=true,
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="hash_id",description="要解密的id",type="string"),
+     *          )
+     *      ),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="code", type="string",description="状态码"),
+     *              @SWG\Property(property="message", type="string",description="提示信息"),
+     *              @SWG\Property(property="data", type="string",description="解密后的id"),
+     *          )
+     *      ),
+     * )
+     */
+    public function hashIdsDecode(Request $request)
+    {
+        $hashId = $request->input('hash_id','');
+        $id = Hashids::decode($hashId);
+        if (isset($id[0])) {
+            return $this->responseData($id[0]);
+        }
+        return $this->responseData('');
+    }
 
 }

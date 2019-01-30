@@ -38,6 +38,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
+        'V' => 
+        array (
+            'Vinkla\\Hashids\\' => 15,
+        ),
         'T' => 
         array (
             'Tymon\\JWTAuth\\' => 14,
@@ -106,8 +110,13 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         array (
             'Illuminate\\' => 11,
         ),
+        'H' => 
+        array (
+            'Hashids\\' => 8,
+        ),
         'G' => 
         array (
+            'GrahamCampbell\\Manager\\' => 23,
             'GeoIp2\\' => 7,
         ),
         'F' => 
@@ -160,6 +169,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Vinkla\\Hashids\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vinkla/hashids/src',
         ),
         'Tymon\\JWTAuth\\' => 
         array (
@@ -325,6 +338,14 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Hashids\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hashids/hashids/src',
+        ),
+        'GrahamCampbell\\Manager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/graham-campbell/manager/src',
+        ),
         'GeoIp2\\' => 
         array (
             0 => __DIR__ . '/..' . '/geoip2/geoip2/src',
@@ -453,6 +474,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'App\\Services\\ShortUrlService' => __DIR__ . '/../..' . '/app/Services/ShortUrlService.php',
         'App\\Transformers\\ArticleTransformer' => __DIR__ . '/../..' . '/app/Transformers/ArticleTransformer.php',
         'App\\Transformers\\BaseTransformer' => __DIR__ . '/../..' . '/app/Transformers/BaseTransformer.php',
+        'App\\Transformers\\ExpressTransformer' => __DIR__ . '/../..' . '/app/Transformers/ExpressTransformer.php',
         'App\\Transformers\\UserInfoTransformer' => __DIR__ . '/../..' . '/app/Transformers/UserInfoTransformer.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
@@ -1079,6 +1101,9 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'GeoIp2\\Record\\Subdivision' => __DIR__ . '/..' . '/geoip2/geoip2/src/Record/Subdivision.php',
         'GeoIp2\\Record\\Traits' => __DIR__ . '/..' . '/geoip2/geoip2/src/Record/Traits.php',
         'GeoIp2\\WebService\\Client' => __DIR__ . '/..' . '/geoip2/geoip2/src/WebService/Client.php',
+        'GrahamCampbell\\Manager\\AbstractManager' => __DIR__ . '/..' . '/graham-campbell/manager/src/AbstractManager.php',
+        'GrahamCampbell\\Manager\\ConnectorInterface' => __DIR__ . '/..' . '/graham-campbell/manager/src/ConnectorInterface.php',
+        'GrahamCampbell\\Manager\\ManagerInterface' => __DIR__ . '/..' . '/graham-campbell/manager/src/ManagerInterface.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -1147,6 +1172,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Hashids\\Hashids' => __DIR__ . '/..' . '/hashids/hashids/src/Hashids.php',
+        'Hashids\\HashidsException' => __DIR__ . '/..' . '/hashids/hashids/src/HashidsException.php',
+        'Hashids\\HashidsInterface' => __DIR__ . '/..' . '/hashids/hashids/src/HashidsInterface.php',
+        'Hashids\\Math' => __DIR__ . '/..' . '/hashids/hashids/src/Math.php',
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
         'Illuminate\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
         'Illuminate\\Auth\\Access\\HandlesAuthorization' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/HandlesAuthorization.php',
@@ -3958,6 +3987,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Tymon\\JWTAuth\\Validators\\TokenValidator' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Validators/TokenValidator.php',
         'Tymon\\JWTAuth\\Validators\\Validator' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Validators/Validator.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+        'Vinkla\\Hashids\\Facades\\Hashids' => __DIR__ . '/..' . '/vinkla/hashids/src/Facades/Hashids.php',
+        'Vinkla\\Hashids\\HashidsFactory' => __DIR__ . '/..' . '/vinkla/hashids/src/HashidsFactory.php',
+        'Vinkla\\Hashids\\HashidsManager' => __DIR__ . '/..' . '/vinkla/hashids/src/HashidsManager.php',
+        'Vinkla\\Hashids\\HashidsServiceProvider' => __DIR__ . '/..' . '/vinkla/hashids/src/HashidsServiceProvider.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',

@@ -36,6 +36,9 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::post('/login', 'UserController@login');
     Route::post('/register', 'UserController@register');
 
+    // hashids
+    Route::post('/hash_ids/encode', 'HashIdsController@hashIdsEncode');
+
     //user
     Route::group(['prefix' => '/user'], function () {
         Route::group(['middleware' => 'api.auth'], function () {

@@ -185,6 +185,7 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
         \Jcc\LaravelVote\VoteServiceProvider::class,
+        Vinkla\Hashids\HashidsServiceProvider::class,
     ],
 
     /*
@@ -236,6 +237,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'GeoIP' => 'Torann\GeoIP\GeoIP',
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
     ],
 
 ];

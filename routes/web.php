@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.layouts.master');
 });
+
+/*Route::any('{all}', function () {
+    return view('home.layouts.master');
+})->where(['all' => '.*']);*/
 
 Route::get('/swagger', function () {
     return view('vendor.l5-swagger.index', ['urlToDocs' => '/doc/json']);

@@ -447,6 +447,7 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'App\\Http\\Controllers\\V1\\AmapController' => __DIR__ . '/../..' . '/app/Http/Controllers/V1/AmapController.php',
         'App\\Http\\Controllers\\V1\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/V1/ArticleController.php',
         'App\\Http\\Controllers\\V1\\BaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/V1/BaseController.php',
+        'App\\Http\\Controllers\\V1\\HashIdsController' => __DIR__ . '/../..' . '/app/Http/Controllers/V1/HashIdsController.php',
         'App\\Http\\Controllers\\V1\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/V1/IndexController.php',
         'App\\Http\\Controllers\\V1\\ShortUrlController' => __DIR__ . '/../..' . '/app/Http/Controllers/V1/ShortUrlController.php',
         'App\\Http\\Controllers\\V1\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/V1/UserController.php',

@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\V1\\AmapController' => $baseDir . '/app/Http/Controllers/V1/AmapController.php',
     'App\\Http\\Controllers\\V1\\ArticleController' => $baseDir . '/app/Http/Controllers/V1/ArticleController.php',
     'App\\Http\\Controllers\\V1\\BaseController' => $baseDir . '/app/Http/Controllers/V1/BaseController.php',
+    'App\\Http\\Controllers\\V1\\HashIdsController' => $baseDir . '/app/Http/Controllers/V1/HashIdsController.php',
     'App\\Http\\Controllers\\V1\\IndexController' => $baseDir . '/app/Http/Controllers/V1/IndexController.php',
     'App\\Http\\Controllers\\V1\\ShortUrlController' => $baseDir . '/app/Http/Controllers/V1/ShortUrlController.php',
     'App\\Http\\Controllers\\V1\\UserController' => $baseDir . '/app/Http/Controllers/V1/UserController.php',

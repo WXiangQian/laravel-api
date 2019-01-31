@@ -26,12 +26,27 @@ class ArticleController extends BaseController
      *              @SWG\Property(property="code", type="string",description="状态码"),
      *              @SWG\Property(property="message", type="string",description="提示信息"),
      *              @SWG\Property(property="data", type="object",
-     *                  @SWG\Property(property="id", type="integer", description="id"),
-     *                  @SWG\Property(property="type", type="string", description="文章类型"),
-     *                  @SWG\Property(property="title", type="string", description="标题"),
-     *                  @SWG\Property(property="content", type="string", description="内容"),
-     *                  @SWG\Property(property="vote", type="string", description="点赞量"),
-     *                  @SWG\Property(property="updated_at", type="string", description="最后更新时间"),
+     *                  @SWG\Property(property="current_page", type="string", description="现在的页码"),
+     *                  @SWG\Property(property="first_page_url", type="string", description="第一页URL"),
+     *                  @SWG\Property(property="from", type="integer", description="开始"),
+     *                  @SWG\Property(property="last_page", type="string", description="最后一页页码"),
+     *                  @SWG\Property(property="last_page_url", type="string", description="最后一页url"),
+     *                  @SWG\Property(property="next_page_url", type="integer", description="下一页url"),
+     *                  @SWG\Property(property="path", type="string",description="路径"),
+     *                  @SWG\Property(property="per_page", type="integer", description="每页显示数量"),
+     *                  @SWG\Property(property="prev_page_url", type="string",description="上一页地址"),
+     *                  @SWG\Property(property="to", type="integer", description="结束"),
+     *                  @SWG\Property(property="total", type="integer", description="总条数"),
+     *                  @SWG\Property(property="lists", type="array",
+     *                      @SWG\Items(type="object",
+     *                          @SWG\Property(property="id", type="integer", description="id"),
+     *                          @SWG\Property(property="type", type="string", description="文章类型"),
+     *                          @SWG\Property(property="title", type="string", description="标题"),
+     *                          @SWG\Property(property="content", type="string", description="内容"),
+     *                          @SWG\Property(property="vote", type="string", description="点赞量"),
+     *                          @SWG\Property(property="updated_at", type="string", description="最后更新时间"),
+     *                      ),
+     *                  ),
      *              ),
      *          )
      *      ),
@@ -39,7 +54,7 @@ class ArticleController extends BaseController
      */
     public function getArticleList()
     {
-        $articles = Article::orderBy('id', 'DESC')->paginate(3);
+        $articles = Article::orderBy('id', 'DESC')->paginate(10);
 
         return $this->responseData(ArticleTransformer::transforms($articles));
     }

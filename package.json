@@ -14,11 +14,12 @@
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
         "jquery": "^3.2",
-        "laravel-mix": "^1.0",
+        "laravel-mix": "^4.0.14",
         "lodash": "^4.17.4",
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "element-ui": "^2.4.11"
+        "element-ui": "^2.4.11",
+        "vue-router": "^3.0.2"
     }
 }

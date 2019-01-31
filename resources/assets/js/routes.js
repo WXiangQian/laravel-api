@@ -2,6 +2,7 @@ import VueRouter from 'vue-router'
 
 import home from './components/Home.vue'
 import about from './components/About.vue'
+import article from './components/Article.vue'
 
 let routes = [
     {
@@ -11,6 +12,11 @@ let routes = [
     {
         path: '/about',
         component: about
+    },
+    {
+        path: '/article/:id',
+        name: 'article',
+        component: article
     },
 ];
 

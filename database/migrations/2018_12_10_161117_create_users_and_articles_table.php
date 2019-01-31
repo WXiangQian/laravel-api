@@ -36,7 +36,7 @@ class CreateUsersAndArticlesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->comment('用户id');
             $table->integer('type_id')->comment('类型id');
-            $table->string('title', 50)->comment('标题');
+            $table->string('title')->comment('标题');
             $table->text('content')->comment('内容');
             $table->softDeletes();
             $table->timestamps();
@@ -50,5 +50,8 @@ class CreateUsersAndArticlesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('article_types');
+        Schema::dropIfExists('articles');
     }
 }

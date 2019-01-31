@@ -186,6 +186,7 @@ return [
         \Torann\GeoIP\GeoIPServiceProvider::class,
         \Jcc\LaravelVote\VoteServiceProvider::class,
         Vinkla\Hashids\HashidsServiceProvider::class,
+        \Laravel\Tinker\TinkerServiceProvider::class,
     ],
 
     /*

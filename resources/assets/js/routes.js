@@ -1,8 +1,8 @@
 import VueRouter from 'vue-router'
 
-import home from './components/Home.vue'
-import about from './components/About.vue'
-import article from './components/Article.vue'
+import home from './components/pages/Home.vue'
+import about from './components/pages/About.vue'
+import article from './components/articles/Article.vue'
 
 let routes = [
     {

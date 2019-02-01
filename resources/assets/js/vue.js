@@ -1,6 +1,4 @@
-import exampleComponent from './components/ExampleComponent.vue'
-import test from './components/Test.vue'
-import articles from './components/Articles.vue'
+import app from './components/App'
 
 import 'element-ui/lib/theme-chalk/index.css';
 import router from './routes'
@@ -21,9 +19,7 @@ new Vue({
     router,
     template: '',
     components: {
-        exampleComponent,
-        test,
-        articles,
+        app,
     },
 
     mounted() {

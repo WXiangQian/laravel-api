@@ -19,6 +19,13 @@ class ArticleTransformer extends BaseTransformer
         if ($articleType) {
             $item['type'] = $articleType->name;
         }
+        // 获取上一篇下一篇的内容
+        $preArticleId = Article::getPrevArticleId($item['id']);
+        $item['pre_article'] = Article::find($preArticleId);
+
+
+        $nextArticleId = Article::getNextArticleId($item['id']);
+        $item['next_article'] = Article::find($nextArticleId);
 
         return $item;
     }

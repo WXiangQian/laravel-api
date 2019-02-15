@@ -3440,25 +3440,59 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       article: []
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  created: function created() {
+    // 组件创建完后获取数据，
+    // 此时 data 已经被 observed 了
+    this.fetchData();
+  },
+  watch: {
+    // 如果路由有变化，会再次执行该方法
+    '$route': 'fetchData'
+  },
+  methods: {
+    fetchData: function fetchData() {
+      var _this = this;
 
-    var url = '/api/v1/article/info';
-    var id = this.$route.params.id;
-    axios.get(url, {
-      params: {
-        'id': id
-      }
-    }).then(function (response) {
-      _this.article = response.data.data;
-    });
-  }
+      var url = '/api/v1/article/info';
+      var id = this.$route.params.id;
+      axios.get(url, {
+        params: {
+          'id': id
+        }
+      }).then(function (response) {
+        _this.article = response.data.data;
+      });
+    }
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -85125,11 +85159,83 @@ var render = function() {
             _c("h4", [_vm._v(_vm._s(_vm.article.title))])
           ]),
           _vm._v(" "),
+          _c("div", { staticClass: "panel-heading" }, [
+            _c("span", [_vm._v("文章类型：" + _vm._s(_vm.article.type))]),
+            _vm._v(" "),
+            _c("span", [_vm._v("点赞量：" + _vm._s(_vm.article.vote))]),
+            _vm._v(" "),
+            _c("span", { staticStyle: { float: "right" } }, [
+              _vm._v("更新时间： " + _vm._s(_vm.article.updated_at))
+            ])
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "panel-body" }, [
             _c("div", { staticClass: "bs-callout bs-callout-danger" }, [
               _c("p", [_vm._v(_vm._s(_vm.article.content))])
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "panel-heading" },
+            [
+              _vm._v("\n                    上一篇：\n                    "),
+              _vm.article.pre_article == null
+                ? _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                    _vm._v("暂无文章")
+                  ])
+                : _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "article",
+                          params: { id: _vm.article.pre_article.id }
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(_vm.article.pre_article.title) +
+                          "\n                    "
+                      )
+                    ]
+                  )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "panel-heading" },
+            [
+              _vm._v("\n                    下一篇：\n                    "),
+              _vm.article.next_article == null
+                ? _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                    _vm._v("暂无文章")
+                  ])
+                : _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "article",
+                          params: { id: _vm.article.next_article.id }
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(_vm.article.next_article.title) +
+                          "\n                    "
+                      )
+                    ]
+                  )
+            ],
+            1
+          )
         ])
       ])
     ])

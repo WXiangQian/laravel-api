@@ -3529,19 +3529,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      articles: []
+      currentPage: 1,
+      //初始页
+      articles: [],
+      data: []
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  created: function created() {
+    this.handleCurrentChange(this.currentPage);
+  },
+  methods: {
+    handleCurrentChange: function handleCurrentChange() {
+      var _this = this;
 
-    var url = '/api/v1/article/list';
-    axios.get(url, {}).then(function (response) {
-      _this.articles = response.data.data.lists;
-    });
+      var currentPage = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      //console.log(this.currentPage)  //点击第几页
+      var url = '/api/v1/article/list';
+      axios.get(url, {
+        params: {
+          'page': currentPage
+        }
+      }).then(function (response) {
+        _this.articles = response.data.data.lists;
+        _this.data = response.data.data;
+      });
+    }
   }
 });
 
@@ -85330,6 +85356,30 @@ var render = function() {
             )
           }),
           0
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "block" }, [
+        _c(
+          "div",
+          { staticClass: "pagination-container" },
+          [
+            _c("el-pagination", {
+              attrs: {
+                "current-page": _vm.currentPage,
+                layout: "total, prev, pager, next, jumper",
+                total: _vm.data.total
+              },
+              on: {
+                "size-change": _vm.handleSizeChange,
+                "current-change": _vm.handleCurrentChange,
+                "update:currentPage": function($event) {
+                  _vm.currentPage = $event
+                }
+              }
+            })
+          ],
+          1
         )
       ])
     ])

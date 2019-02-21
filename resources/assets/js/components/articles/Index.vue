@@ -17,6 +17,17 @@
 
                     </div>
                 </div>
+                <div class="block">
+                    <div class="pagination-container">
+                        <el-pagination
+                                @size-change="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page.sync="currentPage"
+                                layout="total, prev, pager, next, jumper"
+                                :total="data.total">
+                        </el-pagination>
+                    </div>
+                </div>
             </div>
         </div>
 </template>
@@ -25,16 +36,29 @@
     export default {
         data(){
             return {
-                articles: []
+                currentPage:1, //初始页
+                articles: [],
+                data: [],
             }
         },
-        mounted() {
-            const url = '/api/v1/article/list'
-
-            axios.get(url, {})
-                .then(response => {
-                    this.articles =  response.data.data.lists
-                })
+        created() {
+            this.handleCurrentChange(this.currentPage)
         },
+        methods: {
+            handleCurrentChange: function(currentPage = 1){
+                //console.log(this.currentPage)  //点击第几页
+                const url = '/api/v1/article/list'
+
+                axios.get(url, {
+                    params: {
+                        'page' :currentPage
+                    }
+                })
+                    .then(response => {
+                        this.articles =  response.data.data.lists
+                        this.data =  response.data.data
+                    })
+            },
+        }
     }
 </script>

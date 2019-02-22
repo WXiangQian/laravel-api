@@ -20,7 +20,6 @@
                 <div class="block">
                     <div class="pagination-container">
                         <el-pagination
-                                @size-change="handleSizeChange"
                                 @current-change="handleCurrentChange"
                                 :current-page.sync="currentPage"
                                 layout="total, prev, pager, next, jumper"

@@ -3539,7 +3539,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -85371,7 +85370,6 @@ var render = function() {
                 total: _vm.data.total
               },
               on: {
-                "size-change": _vm.handleSizeChange,
                 "current-change": _vm.handleCurrentChange,
                 "update:currentPage": function($event) {
                   _vm.currentPage = $event

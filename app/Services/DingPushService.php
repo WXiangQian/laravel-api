@@ -18,4 +18,14 @@ class DingPushService
         return $res;
     }
 
+    public static function sendLink($title = ' ', $text = ' ', $messageUrl, $picUrl = '')
+    {
+        $DingTalk = new DingTalk();
+        $message = new Message();
+        $data = $message->link($title, $text, $messageUrl, $picUrl);
+        $res = $DingTalk->send($data);
+
+        return $res;
+    }
+
 }

@@ -110,6 +110,8 @@ return [
 
     'sina_key' => env('SINA_KEY'),
 
+    'dingtalk_token' => env('DINGTALK_TOKEN'),
+
     'cipher' => 'AES-256-CBC',
 
     /*
@@ -187,6 +189,7 @@ return [
         \Jcc\LaravelVote\VoteServiceProvider::class,
         Vinkla\Hashids\HashidsServiceProvider::class,
         \Laravel\Tinker\TinkerServiceProvider::class,
+        \Qian\DingTalk\DingTalkServiceProvider::class,
     ],
 
     /*

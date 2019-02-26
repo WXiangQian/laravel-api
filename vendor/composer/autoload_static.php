@@ -75,6 +75,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         array (
             'Ramsey\\Uuid\\' => 12,
         ),
+        'Q' => 
+        array (
+            'Qian\\DingTalk\\' => 14,
+        ),
         'P' => 
         array (
             'Psy\\' => 4,
@@ -269,6 +273,10 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
+        'Qian\\DingTalk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wxiangqian/laravel-dingtalk/src',
         ),
         'Psy\\' => 
         array (
@@ -3123,6 +3131,9 @@ class ComposerStaticInit7335646fe67173f2c942cb617b33a15d
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'Qian\\DingTalk\\DingTalk' => __DIR__ . '/..' . '/wxiangqian/laravel-dingtalk/src/DingTalk.php',
+        'Qian\\DingTalk\\DingTalkServiceProvider' => __DIR__ . '/..' . '/wxiangqian/laravel-dingtalk/src/DingTalkServiceProvider.php',
+        'Qian\\DingTalk\\Message' => __DIR__ . '/..' . '/wxiangqian/laravel-dingtalk/src/Message.php',
         'Ramsey\\Uuid\\BinaryUtils' => __DIR__ . '/..' . '/ramsey/uuid/src/BinaryUtils.php',
         'Ramsey\\Uuid\\Builder\\DefaultUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DefaultUuidBuilder.php',
         'Ramsey\\Uuid\\Builder\\DegradedUuidBuilder' => __DIR__ . '/..' . '/ramsey/uuid/src/Builder/DegradedUuidBuilder.php',

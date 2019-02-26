@@ -19,6 +19,7 @@
     "torann/geoip": "^1.0",
     "tymon/jwt-auth": "1.0.0-rc.1",
     "vinkla/hashids": "v3.3.0",
+    "wxiangqian/laravel-dingtalk": "^1.0",
     "wythe/logistics": "^0.0.3",
     "zircote/swagger-php": "2.*"
   },

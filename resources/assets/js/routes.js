@@ -4,6 +4,7 @@ import home from './components/pages/Home.vue'
 import about from './components/pages/About.vue'
 import article from './components/articles/Article.vue'
 import NotFoundComponent from './components/common/NotFoundComponent'
+import error from './components/common/401'
 
 let routes = [
     {
@@ -27,6 +28,13 @@ let routes = [
         component: NotFoundComponent,
         meta: {
             title: '404未找到',
+        },
+    },
+    {
+        path: '/401',
+        component: error,
+        meta: {
+            title: '401',
         },
     }
 ];

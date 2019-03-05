@@ -7,6 +7,11 @@ use App\Http\Requests\UrlRequest;
 use App\Services\ShortUrlService;
 use Illuminate\Http\Request;
 
+/**
+ * Class ShortUrlController
+ * @author WXiangQian <175023117@qq.com>
+ * @package App\Http\Controllers\V1
+ */
 class ShortUrlController extends BaseController
 {
 

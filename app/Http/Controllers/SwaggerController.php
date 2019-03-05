@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Swagger\Annotations as SWG;
 
+/**
+ * Class SwaggerController
+ * @author WXiangQian <175023117@qq.com>
+ * @package App\Http\Controllers
+ */
 class SwaggerController extends Controller
 {
 

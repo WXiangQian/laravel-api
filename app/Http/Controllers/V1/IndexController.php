@@ -7,6 +7,11 @@ use App\Transformers\UserInfoTransformer;
 use Illuminate\Http\Request;
 use Wythe\Logistics\Logistics;
 
+/**
+ * Class IndexController
+ * @author WXiangQian <175023117@qq.com>
+ * @package App\Http\Controllers\V1
+ */
 class IndexController extends BaseController
 {
 

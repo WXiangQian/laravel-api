@@ -7,6 +7,11 @@ use App\Services\AmapService;
 use Illuminate\Http\Request;
 use Torann\GeoIP\Facades\GeoIP;
 
+/**
+ * Class AmapController
+ * @author WXiangQian <175023117@qq.com>
+ * @package App\Http\Controllers\V1
+ */
 class AmapController extends BaseController
 {
     /**

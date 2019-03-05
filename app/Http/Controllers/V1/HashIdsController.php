@@ -6,6 +6,11 @@ namespace App\Http\Controllers\V1;
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
 
+/**
+ * Class HashIdsController
+ * @author WXiangQian <175023117@qq.com>
+ * @package App\Http\Controllers\V1
+ */
 class HashIdsController extends BaseController
 {
 

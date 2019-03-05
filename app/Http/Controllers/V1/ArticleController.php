@@ -7,6 +7,11 @@ use App\Models\Article;
 use App\Transformers\ArticleTransformer;
 use Illuminate\Http\Request;
 
+/**
+ * Class ArticleController
+ * @author WXiangQian <175023117@qq.com>
+ * @package App\Http\Controllers\V1
+ */
 class ArticleController extends BaseController
 {
 

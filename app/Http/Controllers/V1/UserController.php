@@ -10,6 +10,11 @@ use App\Transformers\ArticleTransformer;
 use Illuminate\Http\Request;
 use JWTAuth;
 
+/**
+ * Class UserController
+ * @author WXiangQian <175023117@qq.com>
+ * @package App\Http\Controllers\V1
+ */
 class UserController extends BaseController
 {
     /**

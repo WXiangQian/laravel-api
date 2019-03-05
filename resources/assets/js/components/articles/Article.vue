@@ -70,6 +70,12 @@
                 })
                     .then(response => {
                         this.article =  response.data.data
+                        this.$message({
+                            message: '恭喜你，成功获取一篇干货内容',
+                            type: 'success',
+                            center: true,
+                            duration: '5000'
+                        });
                     })
             }
         },

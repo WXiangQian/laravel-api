@@ -3493,6 +3493,13 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         _this.article = response.data.data;
+
+        _this.$message({
+          message: '恭喜你，成功获取一篇干货内容',
+          type: 'success',
+          center: true,
+          duration: '5000'
+        });
       });
     }
   },

@@ -27,14 +27,14 @@ let routes = [
         path: '*',
         component: NotFoundComponent,
         meta: {
-            title: '404未找到',
+            title: '404没有找到页面',
         },
     },
     {
         path: '/401',
         component: error,
         meta: {
-            title: '401',
+            title: '401没有权限',
         },
     }
 ];

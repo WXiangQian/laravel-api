@@ -3493,12 +3493,19 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         _this.article = response.data.data;
+        document.title = _this.article.title;
 
         _this.$message({
           message: '恭喜你，成功获取一篇干货内容',
           type: 'success',
           center: true,
           duration: '5000'
+        });
+      }).catch(function (err) {
+        _this.$message({
+          message: err.response.data.message,
+          type: 'error',
+          center: true
         });
       });
     }
@@ -100871,13 +100878,13 @@ var routes = [{
   path: '*',
   component: _components_common_NotFoundComponent__WEBPACK_IMPORTED_MODULE_4__["default"],
   meta: {
-    title: '404未找到'
+    title: '404没有找到页面'
   }
 }, {
   path: '/401',
   component: _components_common_401__WEBPACK_IMPORTED_MODULE_5__["default"],
   meta: {
-    title: '401'
+    title: '401没有权限'
   }
 }];
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({

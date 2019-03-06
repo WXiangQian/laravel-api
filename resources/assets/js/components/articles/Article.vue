@@ -67,14 +67,21 @@
                     params: {
                         'id': id
                     }
-                })
-                    .then(response => {
+                }).then(response => {
                         this.article =  response.data.data
+                        document.title = this.article.title
                         this.$message({
                             message: '恭喜你，成功获取一篇干货内容',
                             type: 'success',
                             center: true,
                             duration: '5000'
+                        });
+                    })
+                    .catch(err => {
+                        this.$message({
+                            message: err.response.data.message,
+                            type: 'error',
+                            center: true,
                         });
                     })
             }

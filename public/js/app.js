@@ -86174,9 +86174,9 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "panel-body" }, [
-              _vm._v(
-                "\n                    I'm an vue example component!\n                "
-              )
+              _c("span", [
+                _vm._v("WXiangQian，1997年生，河北省石家庄，PHP开发工程师。")
+              ])
             ])
           ])
         ])

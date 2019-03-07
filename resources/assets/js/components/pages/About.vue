@@ -6,7 +6,7 @@
                     <div class="panel-heading">About Component</div>
 
                     <div class="panel-body">
-                        I'm an vue example component!
+                        <span>WXiangQian，1997年生，河北省石家庄，PHP开发工程师。</span>
                     </div>
 
                 </div>

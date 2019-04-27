@@ -1,5 +1,5 @@
 # laravel-api
-基于laravel5.5搭建的api架子
+基于 Laravel 5.5.*+VUE+JWT搭建的api+spa应用
 
 ### 克隆仓库
 ```
@@ -39,7 +39,7 @@ npm i element-ui -S 安装element-ui
 (提示directory already exists 可忽略)
 
 ```
-php artisan admin:install
+php artisan migrate
 ```
 
 ### 如需测试数据，则执行以下命令填充数据库数据

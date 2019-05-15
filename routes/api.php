@@ -31,6 +31,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     // index
     Route::get('/home', 'IndexController@index');
     Route::post('/express', 'IndexController@express');
+    Route::post('/wangyi/verify', 'IndexController@wangyiVerify'); // 网易易盾验证
 
     // login register
     Route::post('/login', 'UserController@login');

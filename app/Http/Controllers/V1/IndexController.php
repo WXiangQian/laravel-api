@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Services\CaptchaVerifier;
 use App\Transformers\ExpressTransformer;
 use App\Transformers\UserInfoTransformer;
 use Illuminate\Http\Request;
@@ -96,5 +97,51 @@ class IndexController extends BaseController
 
         $data = $logistics->query($code, 'kuaidi100');
         return $this->responseData(ExpressTransformer::transform($data));
+    }
+
+    /**
+     * @SWG\Post(
+     *      path="/wangyi/verify",
+     *      tags={"public"},
+     *      operationId="wangyi_verify",
+     *      summary="网易易盾验证",
+     *      consumes={"application/json"},
+     *      produces={"application/json"},
+     *     @SWG\Parameter(
+     *          in="body",
+     *          name="data",
+     *          description="",
+     *          required=true,
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="validate",description="二次校验验证码",type="string"),
+     *          )
+     *      ),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="code", type="string",description="状态码"),
+     *              @SWG\Property(property="message", type="string",description="提示信息"),
+     *              @SWG\Property(property="data", type="object",
+     *              ),
+     *          )
+     *      ),
+     * )
+     */
+    public function wangyiVerify(Request $request)
+    {
+        $validate = $request->input('validate');
+
+        // 文档地址：http://support.dun.163.com/documents/15588062143475712?docId=69218161355051008
+
+        $CaptchaVerifier = new CaptchaVerifier(config('captcha.captcha.CAPTCHA_ID'),config('captcha.captcha.SECRET_ID'),config('captcha.captcha.SECRET_KEY'));
+        //通过则返回true
+        $validatePass = $CaptchaVerifier->verify($validate);
+        if (!$validatePass) {
+            return $this->responseError('验证不通过');
+        }
+        return $this->responseSuccess('验证通过');
     }
 }

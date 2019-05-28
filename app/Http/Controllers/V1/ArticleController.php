@@ -64,6 +64,25 @@ class ArticleController extends BaseController
         return $this->responseData(ArticleTransformer::transforms($articles));
     }
 
+    // 随机获取多少篇文章
+    public function randGetArticle()
+    {
+        // 先查询出所有的文章id
+        $newsIds = Article::orderBy('id', 'DESC')->pluck('id')->toArray();
+
+        // 随机获取一条
+//        $rand = array_rand($newsIds,1);
+//        $newsIds = array($newsIds[$rand]);
+
+        // 随机获取两条 或N条
+        $rand = array_rand($newsIds,2);
+        $newsIds = array($newsIds[$rand[0]],$newsIds[$rand[1]]);
+
+        $articles = Article::whereIn('id', $newsIds)->orderBy('id', 'DESC')->get();
+
+        return $this->responseData($articles);
+    }
+
     /**
      * @SWG\Get(
      *      path="/article/info",

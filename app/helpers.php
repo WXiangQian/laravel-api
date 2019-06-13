@@ -2,6 +2,9 @@
 /**
  * 全局函数调用文件
  */
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
 
 /**
  * 冒泡排序（数组排序）
@@ -182,4 +185,36 @@ function encryptNumber($num)
 
     $num = $date . $num . $rand;
     return $num;
+}
+
+function write_log($title,$level,$path,$info){
+    $logger = new Logger($title);
+    switch($level){
+        case 'debug':
+            $logger->pushHandler(new StreamHandler($path, Logger::DEBUG));  //100
+            break;
+        case 'info':
+            $logger->pushHandler(new StreamHandler($path, Logger::INFO));  //200
+            break;
+        case 'waring':
+            $logger->pushHandler(new StreamHandler($path, Logger::WARNING)); //300
+            break;
+        case 'notice':
+            $logger->pushHandler(new StreamHandler($path, Logger::NOTICE)); // 250
+            break;
+        case 'error':
+            $logger->pushHandler(new StreamHandler($path, Logger::ERROR)); // 400
+            break;
+        case 'critical':
+            $logger->pushHandler(new StreamHandler($path, Logger::CRITICAL)); //500
+            break;
+        case 'alert':
+            $logger->pushHandler(new StreamHandler($path, Logger::ALERT));  //550
+            break;
+        case 'emergency':
+            $logger->pushHandler(new StreamHandler($path, Logger::EMERGENCY));   //600
+            break;
+    }
+    $logger->pushHandler(new FirePHPHandler());
+    $logger->addInfo($info);
 }

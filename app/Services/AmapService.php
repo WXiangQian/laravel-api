@@ -3,7 +3,7 @@
 namespace App\Services;
 
 
-class AmapService
+class AmapService extends BasicService
 {
     // Key 是高德Web服务 Key。详细可以参考上方的请求参数说明。
 

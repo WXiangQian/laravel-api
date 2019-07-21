@@ -218,3 +218,10 @@ function write_log($title,$level,$path,$info){
     $logger->pushHandler(new FirePHPHandler());
     $logger->addInfo($info);
 }
+
+function getRedis(){
+    $redis = new \Redis();
+    $redis->connect(env("REDIS_MASTER",'127.0.0.1'),6379);
+    $redis->auth(env('REDIS_AUTH','0'));
+    return $redis;
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\V1;
 
 use App\Services\CaptchaVerifier;
+use App\Services\RedisService;
 use App\Transformers\ExpressTransformer;
 use App\Transformers\UserInfoTransformer;
 use Illuminate\Http\Request;
@@ -143,5 +144,22 @@ class IndexController extends BaseController
             return $this->responseError('验证不通过');
         }
         return $this->responseSuccess('验证通过');
+    }
+
+    public function redis_lock(RedisService $redisService)
+    {
+        $uid = 1;
+        // 是否是锁状态
+        if($redisService->isExistLockKey($uid)){
+            return $this->responseError('服务器繁忙，请稍后再试~');
+        }
+        $redisService->setLock($uid); //加锁
+
+        // 逻辑处理 随便操作
+        // ~~~~~~~~~~~~~~~~~
+
+        $redisService->unLock($uid);//解锁
+
+        return 1;
     }
 }

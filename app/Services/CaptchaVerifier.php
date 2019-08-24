@@ -6,7 +6,8 @@ namespace App\Services;
  * 易盾验证码二次校验SDK
  * WXiangQian <175023117@qq.com>
  */
-class CaptchaVerifier {
+class CaptchaVerifier  extends BasicService
+{
 
     const VERSION = 'v2';
     const API_TIMEOUT = 5;

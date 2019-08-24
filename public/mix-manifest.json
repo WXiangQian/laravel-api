@@ -1,4 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
+<<<<<<< HEAD
     "/css/app.css": "/css/app.css"
+=======
+    "/js/app.b8a92043fd05da9347e7.hot-update.js": "/js/app.b8a92043fd05da9347e7.hot-update.js",
+    "/js/app.cd06718da5238645492d.hot-update.js": "/js/app.cd06718da5238645492d.hot-update.js",
+    "/js/app.a609f2f63ff09875004a.hot-update.js": "/js/app.a609f2f63ff09875004a.hot-update.js",
+    "/js/app.56d0cfd7ed0c1048bb04.hot-update.js": "/js/app.56d0cfd7ed0c1048bb04.hot-update.js"
+>>>>>>> 6f20e2564bbb465d6df7fe36a795b95a30a76da6
 }

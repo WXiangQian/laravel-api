@@ -6,7 +6,7 @@ namespace App\Services;
 use Qian\DingTalk\DingTalk;
 use Qian\DingTalk\Message;
 
-class DingPushService
+class DingPushService extends BasicService
 {
     /**
      * 推送text消息到钉钉群

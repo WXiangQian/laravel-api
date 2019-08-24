@@ -3,7 +3,7 @@
 namespace App\Services;
 
 
-class ShortUrlService
+class ShortUrlService extends BasicService
 {
     /**
      * 调用新浪接口将长链接转为短链接

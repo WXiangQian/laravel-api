@@ -51,6 +51,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     // news
     Route::group(['prefix' => '/article'], function () {
         Route::get('/list', 'ArticleController@getArticleList');
+        Route::get('/rand', 'ArticleController@randGetArticle');
         Route::get('/info', 'ArticleController@getArticleInfo');
         Route::group(['middleware' => 'api.auth'], function () {
             Route::get('/info/vote', 'ArticleController@voteArticle');

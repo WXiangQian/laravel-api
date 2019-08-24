@@ -166,4 +166,31 @@ class UserController extends BaseController
         $articles = $user->votedItems(Article::class)->get()->toArray();
         return $this->responseData(ArticleTransformer::transforms($articles));
     }
+
+    /**
+     * 生成key和iv的地址：https://asecuritysite.com/encryption/keygen
+     *              https://asecuritysite.com/encryption/PBKDF2z
+     */
+    /**
+     * @param string $string 需要加密的字符串
+     * @return string
+     */
+    public function encrypt($string)
+    {
+        // openssl_encrypt 加密不同Mcrypt，对秘钥长度要求，超出16加密结果不变
+        $data = openssl_encrypt($string, 'AES-192-CBC',pack('H*', env('ENCRYPT_KEY')), OPENSSL_RAW_DATA,pack('H*', env('ENCRYPT_IV')));
+
+        $data = base64_encode($data);
+        return $data;
+    }
+    /**
+     * @param string $string 需要解密的字符串
+     * @return string
+     */
+    public function decrypt($string)
+    {
+        $decrypted = openssl_decrypt(base64_decode($string), 'AES-192-CBC',  pack('H*', env('ENCRYPT_KEY')), OPENSSL_RAW_DATA,pack('H*', env('ENCRYPT_IV')));
+
+        return $decrypted;
+    }
 }

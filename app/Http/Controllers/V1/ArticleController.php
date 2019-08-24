@@ -66,6 +66,53 @@ class ArticleController extends BaseController
 
     /**
      * @SWG\Get(
+     *      path="/article/rand",
+     *      tags={"article"},
+     *      operationId="article_rand",
+     *      summary="随机获取多少篇文章",
+     *      consumes={"application/json"},
+     *      produces={"application/json"},
+     *      @SWG\Response(
+     *          response=200,
+     *          description="",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(property="code", type="string",description="状态码"),
+     *              @SWG\Property(property="message", type="string",description="提示信息"),
+     *              @SWG\Property(property="data", type="array",
+     *                  @SWG\Items(type="object",
+     *                       @SWG\Property(property="id", type="integer", description="id"),
+     *                       @SWG\Property(property="type_id", type="integer", description="类型id"),
+     *                       @SWG\Property(property="title", type="string", description="标题"),
+     *                       @SWG\Property(property="content", type="string", description="内容"),
+     *                       @SWG\Property(property="created_at", type="string", description="创建时间"),
+     *                       @SWG\Property(property="updated_at", type="string", description="最后更新时间"),
+     *                 ),
+     *              ),
+     *          )
+     *      ),
+     * )
+     */
+    public function randGetArticle()
+    {
+        // 先查询出所有的文章id
+        $newsIds = Article::orderBy('id', 'DESC')->pluck('id')->toArray();
+
+        // 随机获取一条
+//        $rand = array_rand($newsIds,1);
+//        $newsIds = array($newsIds[$rand]);
+
+        // 随机获取两条 或N条
+        $rand = array_rand($newsIds,2);
+        $newsIds = array($newsIds[$rand[0]],$newsIds[$rand[1]]);
+
+        $articles = Article::whereIn('id', $newsIds)->orderBy('id', 'DESC')->get();
+
+        return $this->responseData($articles);
+    }
+
+    /**
+     * @SWG\Get(
      *      path="/article/info",
      *      tags={"article"},
      *      operationId="article_info",

@@ -31,6 +31,10 @@ npm run hot  热模块替换（或热重新加载）
 npm i element-ui -S 安装element-ui
 ```
 ```
+如果遇到报错'cross-env' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+请执行 npm install -save-dev
+如发现漏洞(vulnerabilities )
+run `npm audit fix` to fix them, or `npm audit` for details
 请记住，npm run dev每次更改Vue组件时都应该运行该命令。
 或者
 您可以运行npm run watch命令来监视每次修改组件并自动重新编译它们。

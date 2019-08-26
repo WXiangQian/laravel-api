@@ -6,7 +6,11 @@
                     <div class="panel-heading">About Component</div>
 
                     <div class="panel-body">
-                        <span>WXiangQian，1997年生，河北省石家庄，PHP开发工程师。</span>
+                        <span>WXiangQian，王向前，男，河北省石家庄人。
+                        工作地点：北京。
+                        岗位：PHP开发工程师。
+                        联系方式：
+                        qq:175023117</span>
                     </div>
 
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Jobs\DemoJob;
 use App\Services\CaptchaVerifier;
 use App\Services\RedisService;
 use App\Transformers\ExpressTransformer;
@@ -161,5 +162,12 @@ class IndexController extends BaseController
         $redisService->unLock($uid);//解锁
 
         return 1;
+    }
+
+    public function queue_demo()
+    {
+        $num = rand(1,999999999);
+        // 这个任务将被分发到默认队列...
+        DemoJob::dispatch($num);
     }
 }

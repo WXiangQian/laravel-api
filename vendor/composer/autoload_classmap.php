@@ -33,7 +33,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Requests\\RegisterRequest' => $baseDir . '/app/Http/Requests/RegisterRequest.php',
     'App\\Http\\Requests\\UrlRequest' => $baseDir . '/app/Http/Requests/UrlRequest.php',
-    'App\\Jobs\\Demo' => $baseDir . '/app/Jobs/Demo.php',
+    'App\\Jobs\\DemoJob' => $baseDir . '/app/Jobs/DemoJob.php',
     'App\\Models\\Article' => $baseDir . '/app/Models/Article.php',
     'App\\Models\\ArticleType' => $baseDir . '/app/Models/ArticleType.php',
     'App\\Models\\BaseModel' => $baseDir . '/app/Models/BaseModel.php',

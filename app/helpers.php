@@ -222,6 +222,9 @@ function write_log($title,$level,$path,$info){
 function getRedis(){
     $redis = new \Redis();
     $redis->connect(env("REDIS_MASTER",'127.0.0.1'),6379);
+    // 设置用户名和密码
+    // $auth = env('REDIS_ONLY_READ_USER').":".env('REDIS_ONLY_READ_PWD');
+    // 默认用户
     $redis->auth(env('REDIS_AUTH','0'));
     return $redis;
 }

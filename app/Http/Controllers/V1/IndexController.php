@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\V1;
 
 use App\Jobs\DemoJob;
+use App\Services\ALiService;
 use App\Services\CaptchaVerifier;
 use App\Services\RedisService;
 use App\Transformers\ExpressTransformer;
 use App\Transformers\UserInfoTransformer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request as Req;
 use Wythe\Logistics\Logistics;
 
 /**
@@ -169,5 +171,37 @@ class IndexController extends BaseController
         $num = rand(1,999999999);
         // 这个任务将被分发到默认队列...
         DemoJob::dispatch($num);
+    }
+
+    /**
+     * 防垃圾手机号注册问题
+     * @param $phone_num
+     * @param $area_code
+     * @return \Illuminate\Http\JsonResponse
+     * User: WXiangQian <175023117@qq.com>
+     * Date: 2019-12-02 12:21
+     */
+    public function ali_api_check($phone_num,$area_code)
+    {
+        $new_phone_num = $phone_num;
+        if ($area_code != '0086') {
+            $new_phone_num = $area_code.'-'.$new_phone_num;
+        }
+        $arr = [
+            'mobile'=>$new_phone_num,
+            'operateTime'=>time(),
+            'ip'=>ip2long(Req::ip()),
+        ];
+        if (!empty($_SERVER['HTTP_REFERER'])) $arr['refer'] = $_SERVER["HTTP_REFERER"];
+        if (!empty($_SERVER['HTTP_USER_AGENT'])) $arr['userAgent'] = $_SERVER["HTTP_USER_AGENT"];
+
+        $json_data = json_encode($arr);
+        $ali_res = ALiService::run($json_data);
+
+        if ($ali_res !== 'error' && $ali_res === false) {
+            // 有风险
+            return $this->responseError('手机号码异常，请联系客服');
+        }
+        return $this->responseSuccess();
     }
 }

@@ -36,6 +36,9 @@ class ALiService extends BasicService
             if (isset($response->Data->Score)) {
                 $score = $response->Data->Score;
             }
+            // 将调用过风险识别的数据存到redis（后台可用list分页）
+            $data = json_decode($json_data);
+            getRedis()->lPush('list:sms',$data->mobile.'_'.$score);
             return self::handle_score($score);
         }
         switch ($response->Code) {
@@ -46,6 +49,7 @@ class ALiService extends BasicService
             case 500: $msg = '内部服务器错误。';break;
             default : $msg = $response->Code;break;
         }
+        // 自定义日志处理 可有可无
         write_log('ali-注册风险识别事件','info','logs/ali_sdk.log','错误信息:'.$msg);
         return 'error';
     }

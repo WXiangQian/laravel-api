@@ -9,6 +9,7 @@
 [![Docs](https://github.com/ly525/luban-h5/workflows/docs/badge.svg)](https://github.com/WXiangQian/laravel-api/wiki/目录结构)
 [![GitHub issues](https://img.shields.io/github/issues/WXiangQian/laravel-api)](https://github.com/WXiangQian/laravel-api/issues)
 [![GitHub stars](https://img.shields.io/github/stars/WXiangQian/laravel-api.svg?style=social&label=Star&maxAge=2592000)](https://github.com/WXiangQian/laravel-api/stargazers/)
+[![GitHub forks](https://img.shields.io/github/forks/WXiangQian/laravel-api.svg?style=social&label=fork&maxAge=2592000)](https://github.com/WXiangQian/laravel-api/network/members/)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
 ### 克隆仓库

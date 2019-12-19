@@ -70,4 +70,22 @@ class ALiService extends BasicService
 
         return $bool;
     }
+
+    /**
+     * 风险识别数据分页
+     * @param $request
+     * User: wangxiangqian@julyedu.cn
+     * Date: 2019-12-19 20:21
+     */
+    public static function mobile_lRange($request)
+    {
+
+        $page = $request->input('page',1);
+        $pageSize = $request->input('limit',50);
+        $limit_s = ($page-1) * $pageSize;
+        $limit_e = ($limit_s + $pageSize) - 1;
+        $list = getRedis()->lRange('list:sms',$limit_s,$limit_e); // 根据分页获取数据
+
+        $lLen = getRedis()->redis->lLen('list:sms'); // 总数
+    }
 }

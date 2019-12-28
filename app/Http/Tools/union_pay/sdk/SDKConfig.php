@@ -110,8 +110,8 @@ class SDKConfig {
         $this->logFilePath =  array_key_exists("acpsdk.log.file.path", $sdk_array)?$sdk_array["acpsdk.log.file.path"]: null;
 		$this->logLevel =  array_key_exists("acpsdk.log.level", $sdk_array)?$sdk_array["acpsdk.log.level"]: null;
          */
-        $this->backUrl =  env('HOST_FAST').env('UNION_PAY_BACKURL',''); // todo 后台通知地址 自定义
-        $this->frontUrl =  env('HOST_EDU').env('UNION_PAY_FRONTURL','/');// todo 前台通知地址 自定义
+        $this->backUrl =  env('UNION_PAY_BACKURL',''); // todo 后台通知地址 自定义
+        $this->frontUrl =  env('UNION_PAY_FRONTURL','/');// todo 前台通知地址 自定义
         $this->signCertPath = dirname(dirname(dirname(__FILE__))).env("UNION_PAY_SIGNCERT_PATH",null);
         $this->encryptCertPath = dirname(dirname(dirname(__FILE__))).env("UNION_PAY_ENCRYPTCERT_PATH",null);
         $this->middleCertPath = dirname(dirname(dirname(__FILE__))).env("UNION_PAY_MIDDLECERT_PATH",null);

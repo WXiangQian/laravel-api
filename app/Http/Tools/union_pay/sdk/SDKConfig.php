@@ -56,9 +56,13 @@ class SDKConfig {
 
 	function __construct(){
 
-		//如果想把acp_sdk.ini挪到其他路径的话，请修改下面这行指定绝对路径。
-		$configFilePath = dirname(__FILE__) . "/acp_sdk_test.ini";
+        $this->env = 'test';
+        $this->signCertPwd = '000000';
+        //如果想把acp_sdk.ini挪到其他路径的话，请修改下面这行指定绝对路径。
+        $configFilePath = dirname(__FILE__) . "/acp_sdk_test.ini";
         if(env('APP_ENV') == 'production'){
+            $this->env = 'prod';
+            $this->signCertPwd = env('UNION_SIGN_CERT_PWD','000000');
             $configFilePath = dirname(__FILE__) . "/acp_sdk.ini";
         }
 		if(!file_exists($configFilePath)){
@@ -109,18 +113,16 @@ class SDKConfig {
         $this->middleCertPath =  array_key_exists("acpsdk.middleCert.path", $sdk_array)?$sdk_array["acpsdk.middleCert.path"]: null;
         $this->logFilePath =  array_key_exists("acpsdk.log.file.path", $sdk_array)?$sdk_array["acpsdk.log.file.path"]: null;
 		$this->logLevel =  array_key_exists("acpsdk.log.level", $sdk_array)?$sdk_array["acpsdk.log.level"]: null;
-         */
+        $this->signCertPwd = array_key_exists("acpsdk.signCert.pwd", $sdk_array)?$sdk_array["acpsdk.signCert.pwd"]: null;
+        */
         $this->backUrl =  env('UNION_PAY_BACKURL',''); // todo 后台通知地址 自定义
         $this->frontUrl =  env('UNION_PAY_FRONTURL','/');// todo 前台通知地址 自定义
-        $this->signCertPath = dirname(dirname(dirname(__FILE__))).env("UNION_PAY_SIGNCERT_PATH",null);
-        $this->encryptCertPath = dirname(dirname(dirname(__FILE__))).env("UNION_PAY_ENCRYPTCERT_PATH",null);
-        $this->middleCertPath = dirname(dirname(dirname(__FILE__))).env("UNION_PAY_MIDDLECERT_PATH",null);
-        $this->rootCertPath = dirname(dirname(dirname(__FILE__))).env("UNION_PAY_ROOTCERT_PATH",null);
+        $this->signCertPath = dirname(dirname(dirname(__FILE__))).'/union_pay/assets/'.$this->env.'/acp_sign.pfx';
+        $this->encryptCertPath = dirname(dirname(dirname(__FILE__))).'/union_pay/assets/'.$this->env.'/acp_enc.cer';
+        $this->middleCertPath = dirname(dirname(dirname(__FILE__))).'/union_pay/assets/'.$this->env.'/acp_middle.cer';
+        $this->rootCertPath = dirname(dirname(dirname(__FILE__))).'/union_pay/assets/'.$this->env.'/acp_root.cer';
         $this->logFilePath = storage_path(env("UNION_PAY_LOGFILE_PATH"));
         $this->logLevel = env("UNION_PAY_LOG_LEVEL",null);
-
-
-		$this->signCertPwd = array_key_exists("acpsdk.signCert.pwd", $sdk_array)?$sdk_array["acpsdk.signCert.pwd"]: null;
 
 		$this->validateCertDir = array_key_exists("acpsdk.validateCert.dir", $sdk_array)? $sdk_array["acpsdk.validateCert.dir"]: null;
 

@@ -63,7 +63,21 @@ class UnionPayController extends BaseController
         if ($txnTime == 0) {
             $txnTime = date('YmdHis');
         }
-
+        // 在生产环境测试的时候，交易金额请勿小于1角。
+        if(env('APP_ENV') == 'production' && $txnAmt <= 10){
+            return $this->responseError('参数错误');
+        }
+        // todo 查询数据库中的实际付款金额
+        $order_txnAmt = 0;
+        // 没有查到则定金异常
+        if (!isset($order_txnAmt)) {
+            return $this->responseError('订单异常');
+        }
+        $order_txnAmt = $order_txnAmt * 100;
+        // 不一样则认为恶意修改金额 返回错误
+        if ($txnAmt != $order_txnAmt) {
+            return $this->responseError('警告：请勿非法操作，已通知管理员️');
+        }
         $params = array(
 
             //以下信息非特殊情况不需要改动
@@ -112,9 +126,9 @@ class UnionPayController extends BaseController
         $uri = SDKConfig::getSDKConfig()->frontTransUrl;
         $html_form = AcpService::createAutoFormHtml( $params, $uri );
 
-        $data = [];
+        $data['url'] = $uri;
         foreach ($html_form as $key=>$value) {
-            $data[] = ['name'=>$key,'value'=>$value];
+            $data['data'][] = ['name'=>$key,'value'=>$value];
         }
         return $this->responseData($data);
 

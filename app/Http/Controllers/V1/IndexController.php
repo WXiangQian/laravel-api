@@ -204,4 +204,30 @@ class IndexController extends BaseController
         }
         return $this->responseSuccess();
     }
+
+    /**
+     * 获取当前用户的信息
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * User: wangxiangqian@julyedu.cn
+     * Date: 2020-02-24 18:14
+     */
+    public function wx_login(Request $request)
+    {
+        $code = trim($request->input('code'));
+
+        // appid和secret在微信小程序后台可以看到，
+        // js_code为使用wx.login登录时获取到的code参数数据，
+        $url  = "https://api.weixin.qq.com/sns/jscode2session?appid=".env('XCX_APP_ID')."&secret=".ENV('XCX_APP_SECRET')."&js_code={$code}&grant_type=authorization_code";
+
+        $apiData=file_get_contents($url);
+        $result = json_decode($apiData, true);
+
+        //获取用户信息(openID，头像，昵称等等 )，然后保存
+        if(!isset($result['errcode'])){
+            return $this->responseData($result);
+        }else{
+            return $this->responseError('获取用户信息失败 '.$result['errmsg']);
+        }
+    }
 }

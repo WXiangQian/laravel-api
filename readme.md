@@ -73,6 +73,13 @@ php artisan serve
 Laravel development server started: <http://127.0.0.1:8000>
 http://127.0.0.1:8000为该网站的临时地址
 ```
+
+```
+// 定时任务命令
+php artisan  schedule:run
+// 自定义command命令
+php artisan test:log
+```
 描述 | 详情
 --- |---
 log地址 | http://127.0.0.1:8000/wxq/logs

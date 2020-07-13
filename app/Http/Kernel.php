@@ -44,7 +44,6 @@ class Kernel extends HttpKernel
             'throttle:1000,1',
             'bindings',
             'accessCrossOrigin',
-            'validation.response',
         ],
     ];
 
@@ -64,6 +63,5 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'accessCrossOrigin' => \App\Http\Middleware\AccessCrossOrigin::class,
         'api.auth' => \App\Http\Middleware\ApiAuth::class,
-        'validation.response' => \App\Http\Middleware\ValidationResponse::class,
     ];
 }

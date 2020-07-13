@@ -50,7 +50,7 @@ class ShortUrlController extends BaseController
      */
     public function getShortUrl(UrlRequest $request)
     {
-        $urlLong = $request->input('url_long','');
+        $urlLong = $request->input('url_long', '');
         $shortUrl = ShortUrlService::getSinaShortUrl($urlLong);
 
         return $this->responseData($shortUrl);

@@ -95,6 +95,7 @@ class IndexController extends BaseController
     {
         $code = $request->input('code', '');
         if (!$code) {
+            throw new LogicException($code);
             return $this->responseError('请输入要查询的快递单号');
         }
         $logistics = new Logistics();
@@ -209,7 +210,7 @@ class IndexController extends BaseController
      * 获取当前用户的信息
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
-     * User: wangxiangqian@julyedu.cn
+     * User: WXiangQian
      * Date: 2020-02-24 18:14
      */
     public function wx_login(Request $request)

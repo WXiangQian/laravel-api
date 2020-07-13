@@ -12,15 +12,4 @@ class Article extends BaseModel
     protected $table = 'articles';
     protected $hidden = ['deleted_at'];
 
-    // 上一篇文章id
-    protected function getPrevArticleId($id)
-    {
-        return self::where('id', '<', $id)->max('id');
-    }
-
-    // 下一篇文章id
-    protected function getNextArticleId($id)
-    {
-        return self::where('id', '>', $id)->min('id');
-    }
 }

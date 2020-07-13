@@ -3,11 +3,14 @@
 namespace App\Services;
 
 
+use App\Exceptions\LogicException;
+
 class ShortUrlService extends BasicService
 {
     /**
      * 调用新浪接口将长链接转为短链接
      * @param  array|string $urlLong 长链接，支持多个转换（需要先执行urlencode)
+     * @throws LogicException
      * @return array
      */
     public static function getSinaShortUrl($urlLong)
@@ -16,7 +19,7 @@ class ShortUrlService extends BasicService
         $source = config('app.sina_key');
         // 参数检查
         if (!$source || !$urlLong) {
-            return false;
+            throw new LogicException(5001);
         }
         // 参数处理，字符串转为数组
         if (!is_array($urlLong)) {

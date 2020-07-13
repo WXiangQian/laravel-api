@@ -74,8 +74,7 @@ class ALiService extends BasicService
     /**
      * 风险识别数据分页
      * @param $request
-     * User: wangxiangqian@julyedu.cn
-     * Date: 2019-12-19 20:21
+     * User: WXiangQian
      */
     public static function mobile_lRange($request)
     {

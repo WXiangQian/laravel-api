@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::group(['middleware' => 'api.auth'], function () {
         Route::get('news', 'IndexController@news');
         Route::get('/user/vote', 'UserController@getVoteArticleByUserId'); // 点赞
-        Route::post('/union/consume','UnionPayController@consume'); // 银联配置
+        Route::post('/union/consume', 'UnionPayController@consume'); // 银联配置
     });
 
     // index
@@ -41,7 +42,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::post('/register', 'UserController@register');
 
     // hashids
-    Route::post('/hash_ids/encode', 'HashIdsController@hashIdsEncode');
+    Route::get('/hash_ids/encode', 'HashIdsController@hashIdsEncode');
     Route::post('/hash_ids/decode', 'HashIdsController@hashIdsDecode');
 
     // news
@@ -63,8 +64,8 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::post('/sina/short_url', 'ShortUrlController@getShortUrl');
 
     // union
-    Route::post('/union/validate/{txnTime}','UnionPayController@union_validate'); // 获取银联参数
-    Route::post('/union/refund','UnionPayController@union_refund'); // 银联退款
+    Route::post('/union/validate/{txnTime}', 'UnionPayController@union_validate'); // 获取银联参数
+    Route::post('/union/refund', 'UnionPayController@union_refund'); // 银联退款
 
 });
 

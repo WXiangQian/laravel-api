@@ -50,7 +50,6 @@ class HashIdsController extends BaseController
             'id' => 'required|integer',
         ]);
 
-        dd(111);
         $id = $request->input('id', '');
 
         $hashId = Hashids::encode($id);
@@ -90,10 +89,11 @@ class HashIdsController extends BaseController
      */
     public function hashIdsDecode(Request $request)
     {
-        $hashId = $request->input('hash_id', '');
-        if (!$hashId) {
-            return $this->responseError('请输入要解密的id');
-        }
+        $this->validate($request, [
+            'hash_id' => 'required',
+        ]);
+        $hashId = $request->input('hash_id');
+
         $id = Hashids::decode($hashId);
         if (isset($id[0])) {
             return $this->responseData($id[0]);

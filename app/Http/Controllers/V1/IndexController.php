@@ -5,7 +5,6 @@ namespace App\Http\Controllers\V1;
 use App\Jobs\DemoJob;
 use App\Services\ALiService;
 use App\Services\CaptchaVerifier;
-use App\Services\RedisService;
 use App\Transformers\ExpressTransformer;
 use App\Transformers\UserInfoTransformer;
 use Illuminate\Http\Request;
@@ -141,7 +140,7 @@ class IndexController extends BaseController
 
         // 文档地址：http://support.dun.163.com/documents/15588062143475712?docId=69218161355051008
 
-        $CaptchaVerifier = new CaptchaVerifier(config('captcha.captcha.CAPTCHA_ID'),config('captcha.captcha.SECRET_ID'),config('captcha.captcha.SECRET_KEY'));
+        $CaptchaVerifier = new CaptchaVerifier(config('captcha.captcha.CAPTCHA_ID'), config('captcha.captcha.SECRET_ID'), config('captcha.captcha.SECRET_KEY'));
         //通过则返回true
         $validatePass = $CaptchaVerifier->verify($validate);
         if (!$validatePass) {
@@ -150,56 +149,40 @@ class IndexController extends BaseController
         return $this->responseSuccess('验证通过');
     }
 
-    public function redis_lock(RedisService $redisService)
-    {
-        $uid = 1;
-        // 是否是锁状态
-        if($redisService->isExistLockKey($uid)){
-            return $this->responseError('服务器繁忙，请稍后再试~');
-        }
-        $redisService->setLock($uid); //加锁
-
-        // 逻辑处理 随便操作
-        // ~~~~~~~~~~~~~~~~~
-
-        $redisService->unLock($uid);//解锁
-
-        return 1;
-    }
 
     public function queue_demo()
     {
-        $num = rand(1,999999999);
+        $num = rand(1, 999999999);
         // 这个任务将被分发到默认队列...
         DemoJob::dispatch($num);
     }
 
     /**
      * 防垃圾手机号注册问题
-     * @param $phone_num
-     * @param $area_code
+     * @param $phoneNum
+     * @param $areaCode
      * @return \Illuminate\Http\JsonResponse
      * User: WXiangQian <175023117@qq.com>
      * Date: 2019-12-02 12:21
      */
-    public function ali_api_check($phone_num,$area_code)
+    public function aliApiCheck($phoneNum, $areaCode)
     {
-        $new_phone_num = $phone_num;
-        if ($area_code != '0086') {
-            $new_phone_num = $area_code.'-'.$new_phone_num;
+        $newPhoneNum = $phoneNum;
+        if ($areaCode != '0086') {
+            $newPhoneNum = $areaCode . '-' . $newPhoneNum;
         }
         $arr = [
-            'mobile'=>$new_phone_num,
-            'operateTime'=>time(),
-            'ip'=>ip2long(Req::ip()),
+            'mobile' => $newPhoneNum,
+            'operateTime' => time(),
+            'ip' => ip2long(Req::ip()),
         ];
         if (!empty($_SERVER['HTTP_REFERER'])) $arr['refer'] = $_SERVER["HTTP_REFERER"];
         if (!empty($_SERVER['HTTP_USER_AGENT'])) $arr['userAgent'] = $_SERVER["HTTP_USER_AGENT"];
 
         $json_data = json_encode($arr);
-        $ali_res = ALiService::run($json_data);
+        $aliRes = ALiService::run($json_data);
 
-        if ($ali_res !== 'error' && $ali_res === false) {
+        if ($aliRes !== 'error' && $aliRes === false) {
             // 有风险
             return $this->responseError('手机号码异常，请联系客服');
         }
@@ -213,22 +196,22 @@ class IndexController extends BaseController
      * User: WXiangQian
      * Date: 2020-02-24 18:14
      */
-    public function wx_login(Request $request)
+    public function wxLogin(Request $request)
     {
         $code = trim($request->input('code'));
 
         // appid和secret在微信小程序后台可以看到，
         // js_code为使用wx.login登录时获取到的code参数数据，
-        $url  = "https://api.weixin.qq.com/sns/jscode2session?appid=".env('XCX_APP_ID')."&secret=".ENV('XCX_APP_SECRET')."&js_code={$code}&grant_type=authorization_code";
+        $url = "https://api.weixin.qq.com/sns/jscode2session?appid=" . env('XCX_APP_ID') . "&secret=" . ENV('XCX_APP_SECRET') . "&js_code={$code}&grant_type=authorization_code";
 
-        $apiData=file_get_contents($url);
+        $apiData = file_get_contents($url);
         $result = json_decode($apiData, true);
 
         //获取用户信息(openID，头像，昵称等等 )，然后保存
-        if(!isset($result['errcode'])){
+        if (!isset($result['errcode'])) {
             return $this->responseData($result);
-        }else{
-            return $this->responseError('获取用户信息失败 '.$result['errmsg']);
+        } else {
+            return $this->responseError('获取用户信息失败 ' . $result['errmsg']);
         }
     }
 }

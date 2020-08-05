@@ -40,12 +40,12 @@ class HaiPayController extends BaseController
      * @throws \GuzzleHttp\Exception\GuzzleException
      * User: https://github.com/WXiangQian
      */
-    public function hai_consume()
+    public function haiConsume()
     {
 
         $key = rand(10000000, 99999999);
         $iv  = rand(10000000, 99999999);
-        $order_id = $this->request->input('order_id',0);
+        $orderId = $this->request->input('order_id',0);
         // 型号
         $model = $this->request->input('model','');
         // 期数：3、6、9、12
@@ -66,7 +66,7 @@ class HaiPayController extends BaseController
         $post_data = array(
             'uuid' => time().rand(1111,9999), // 每一笔订单都不要重复
             'body' => array(
-                'orderSn' => $order_id,
+                'orderSn' => $orderId,
                 'loanType' => $this->loanType,
                 'payAmt' => $payAmt,
                 'orderDate' => date('Y-m-d',time()),
@@ -91,18 +91,18 @@ class HaiPayController extends BaseController
         $password_ = $rsa->encryptByPublicKey($key . $iv);
 
         $data = [
-            'applyNo' => $order_id,
+            'applyNo' => $orderId,
             'channelNo' => '',    // todo 文档里的渠道编号
             'tradeCode' => '', // todo 内部系统使用，文档里有标识
             'data' => $desData,
             'privatekey' => $rsa->getPrivateKey(),
             'key' => $password_
         ];
-        $data_string = json_encode($data);
-        $clinet_data = [
-            'body' => $data_string,
+        $dataString = json_encode($data);
+        $clinetData = [
+            'body' => $dataString,
         ];
-        $result = $this->http_clinet->request('post', $this->host.'/api/payment/gmorder/loanApplication', $clinet_data);
+        $result = $this->http_clinet->request('post', $this->host.'/api/payment/gmorder/loanApplication', $clinetData);
 
         if ($result->getStatusCode() != 200) {
             return $this->responseError('参数错误');
@@ -132,7 +132,7 @@ class HaiPayController extends BaseController
      * 贷款回调(返回格式是海尔强制要求的)
      * User: https://github.com/WXiangQian
      */
-    public function hai_callback()
+    public function haiCallback()
     {
         $post = file_get_contents('php://input');
         $rs = json_decode(stripslashes($post),true);

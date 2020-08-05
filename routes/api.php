@@ -35,7 +35,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::post('/express', 'IndexController@express');
     Route::post('/wangyi/verify', 'IndexController@wangyiVerify'); // 网易易盾验证
     Route::get('/queue_demo', 'IndexController@queue_demo');
-    Route::post('/wx_login', 'IndexController@wx_login'); // wxxcx获取信息
+    Route::post('/wx_login', 'IndexController@wxLogin'); // wxxcx获取信息
 
     // login register
     Route::post('/login', 'UserController@login');
@@ -64,8 +64,8 @@ Route::group(['prefix' => '/v1', 'namespace' => 'V1'], function () {
     Route::post('/sina/short_url', 'ShortUrlController@getShortUrl');
 
     // union
-    Route::post('/union/validate/{txnTime}', 'UnionPayController@union_validate'); // 获取银联参数
-    Route::post('/union/refund', 'UnionPayController@union_refund'); // 银联退款
+    Route::post('/union/validate/{txnTime}', 'UnionPayController@unionValidate'); // 获取银联参数
+    Route::post('/union/refund', 'UnionPayController@unionRefund'); // 银联退款
 
 });
 

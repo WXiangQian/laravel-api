@@ -12,6 +12,7 @@ use saf\Request\V20180919 as saf;
 
 class ALiService extends BasicService
 {
+    const REDIS_KEY = 'list:sms';
 
     public static function run($json_data)
     {
@@ -38,8 +39,8 @@ class ALiService extends BasicService
             }
             // 将调用过风险识别的数据存到redis（后台可用list分页）
             $data = json_decode($json_data);
-            getRedis()->lPush('list:sms',$data->mobile.'_'.$score);
-            return self::handle_score($score);
+            getRedis()->lPush(self::REDIS_KEY,$data->mobile.'_'.$score);
+            return self::handleScore($score);
         }
         switch ($response->Code) {
             case 400: $msg = 'ServiceParameters(事件参数)不合法';break;
@@ -54,7 +55,7 @@ class ALiService extends BasicService
         return 'error';
     }
 
-    public static function handle_score($score)
+    public static function handleScore($score)
     {
         $score = intval($score);
         /**
@@ -76,15 +77,15 @@ class ALiService extends BasicService
      * @param $request
      * User: WXiangQian
      */
-    public static function mobile_lRange($request)
+    public static function mobileLRange($request)
     {
 
         $page = $request->input('page',1);
         $pageSize = $request->input('limit',50);
         $limit_s = ($page-1) * $pageSize;
         $limit_e = ($limit_s + $pageSize) - 1;
-        $list = getRedis()->lRange('list:sms',$limit_s,$limit_e); // 根据分页获取数据
+        $list = getRedis()->lRange(self::REDIS_KEY,$limit_s,$limit_e); // 根据分页获取数据
 
-        $lLen = getRedis()->redis->lLen('list:sms'); // 总数
+        $lLen = getRedis()->redis->lLen(self::REDIS_KEY); // 总数
     }
 }

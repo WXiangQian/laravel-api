@@ -2,7 +2,7 @@
  laravel-api
 </h2>
 <p align="center">
-基于 Laravel 5.5.*+VUE+JWT搭建的api+spa应用
+基于 Laravel 5.5.*+VUE+JWT搭建的api+spa应用(demo仓库)
 </p>
 
 

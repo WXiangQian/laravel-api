@@ -66,4 +66,22 @@ class Common
 
         return 1;
     }
+
+    /**
+     * 相当于php的ip2long函数
+     * 将IPV4的字符串互联网协议转换成长整型数字
+     * @param $ip
+     * @return float|int
+     * User: WXiangQian
+     */
+    public static function getIpNodeNum($ip)
+    {
+        // $num = ip2long($ip);
+        $num = 0;
+        $ipArr = explode('.', $ip);
+        foreach ($ipArr as $k => $v) {
+            $num += $ipArr[$k] * pow(256, (3 - $k));
+        }
+        return $num;
+    }
 }

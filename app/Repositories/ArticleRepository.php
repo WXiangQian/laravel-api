@@ -17,13 +17,13 @@ class ArticleRepository
 {
 
     // 上一篇文章id
-    protected function getPrevArticleId($id)
+    public function getPrevArticleId($id)
     {
         return Article::where('id', '<', $id)->max('id');
     }
 
     // 下一篇文章id
-    protected function getNextArticleId($id)
+    public function getNextArticleId($id)
     {
         return Article::where('id', '>', $id)->min('id');
     }

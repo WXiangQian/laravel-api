@@ -5,6 +5,7 @@ namespace App\Transformers;
 
 use App\Models\Article;
 use App\Models\ArticleType;
+use App\Repositories\ArticleRepository;
 
 class ArticleTransformer extends BaseTransformer
 {
@@ -19,12 +20,13 @@ class ArticleTransformer extends BaseTransformer
         if ($articleType) {
             $item['type'] = $articleType->name;
         }
+        $articleRepos = new ArticleRepository();
         // 获取上一篇下一篇的内容
-        $preArticleId = Article::getPrevArticleId($item['id']);
+        $preArticleId = $articleRepos->getPrevArticleId($item['id']);
         $item['pre_article'] = Article::find($preArticleId);
 
 
-        $nextArticleId = Article::getNextArticleId($item['id']);
+        $nextArticleId = $articleRepos->getNextArticleId($item['id']);
         $item['next_article'] = Article::find($nextArticleId);
 
         return $item;

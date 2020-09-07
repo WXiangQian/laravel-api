@@ -9,6 +9,9 @@ namespace App\Common;
 
 use App\Exceptions\LogicException;
 use App\Services\RedisService;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
 
 class Common
 {
@@ -83,5 +86,73 @@ class Common
             $num += $ipArr[$k] * pow(256, (3 - $k));
         }
         return $num;
+    }
+
+    /**
+     * 自定义写入log
+     * @param $title
+     * @param $level string 告警级别
+     * @param $path string log地址
+     * @param $info
+     * @throws \Exception
+     * User: WXiangQian
+     */
+    public function writeLog($title,$level,$path,$info)
+    {
+        $logger = new Logger($title);
+        switch($level){
+            case 'debug':
+                $logger->pushHandler(new StreamHandler($path, Logger::DEBUG));  //100
+                break;
+            case 'info':
+                $logger->pushHandler(new StreamHandler($path, Logger::INFO));  //200
+                break;
+            case 'waring':
+                $logger->pushHandler(new StreamHandler($path, Logger::WARNING)); //300
+                break;
+            case 'notice':
+                $logger->pushHandler(new StreamHandler($path, Logger::NOTICE)); // 250
+                break;
+            case 'error':
+                $logger->pushHandler(new StreamHandler($path, Logger::ERROR)); // 400
+                break;
+            case 'critical':
+                $logger->pushHandler(new StreamHandler($path, Logger::CRITICAL)); //500
+                break;
+            case 'alert':
+                $logger->pushHandler(new StreamHandler($path, Logger::ALERT));  //550
+                break;
+            case 'emergency':
+                $logger->pushHandler(new StreamHandler($path, Logger::EMERGENCY));   //600
+                break;
+        }
+        $logger->pushHandler(new FirePHPHandler());
+        $logger->addInfo($info);
+    }
+
+
+    /**
+     * 根据某个字段排序 (二维数组)
+     * @param $list
+     * @param $where ['field'=>'id', 'orderBy'=>'desc']
+     * @return mixed
+     * User: WXiangQian
+     */
+    public static function sortListByFiled($list, $where = [])
+    {
+        if (empty($where) || empty($list)) {
+            return $list;
+        }
+
+        $sort = SORT_ASC;
+        if ($where['orderBy'] == 'desc') {
+            $sort = SORT_DESC;
+        }
+        // array_column() 返回输入数组中某个单一列的值。
+        $lastNameList = array_column($list, $where['field']);
+        // array_multisort() 函数返回排序数组。
+        array_multisort($lastNameList, $sort, $list);
+
+        return $list;
     }
 }

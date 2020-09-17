@@ -1636,7 +1636,8 @@
                 "name": "Jakub Onderka",
                 "email": "jakub.onderka@gmail.com"
             }
-        ]
+        ],
+        "abandoned": "php-parallel-lint/php-console-color"
     },
     {
         "name": "jakub-onderka/php-console-highlighter",
@@ -1690,7 +1691,8 @@
                 "homepage": "http://www.acci.cz/"
             }
         ],
-        "description": "Highlight PHP code in terminal"
+        "description": "Highlight PHP code in terminal",
+        "abandoned": "php-parallel-lint/php-console-highlighter"
     },
     {
         "name": "jcc/laravel-vote",
@@ -2378,7 +2380,8 @@
         "keywords": [
             "cron",
             "schedule"
-        ]
+        ],
+        "abandoned": "dragonmantank/cron-expression"
     },
     {
         "name": "myclabs/deep-copy",
@@ -3334,7 +3337,8 @@
         "homepage": "https://github.com/sebastianbergmann/php-token-stream/",
         "keywords": [
             "tokenizer"
-        ]
+        ],
+        "abandoned": true
     },
     {
         "name": "phpunit/phpunit",
@@ -3502,12 +3506,12 @@
         "version_normalized": "1.1.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/nrk/predis.git",
+            "url": "https://github.com/predis/predis.git",
             "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+            "url": "https://api.github.com/repos/predis/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
             "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
             "shasum": "",
             "mirrors": [
@@ -6592,17 +6596,17 @@
     },
     {
         "name": "wxiangqian/laravel-dingtalk",
-        "version": "v1.0.0",
-        "version_normalized": "1.0.0.0",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/WXiangQian/laravel-DingTalk.git",
-            "reference": "4c004e8825bfce96e9b135188eb3ba00f224beb4"
+            "url": "https://github.com/WXiangQian/laravel-dingtalk.git",
+            "reference": "5e5debf83bd101f43927a99e85bdeecdc133bc7d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/WXiangQian/laravel-DingTalk/zipball/4c004e8825bfce96e9b135188eb3ba00f224beb4",
-            "reference": "4c004e8825bfce96e9b135188eb3ba00f224beb4",
+            "url": "https://api.github.com/repos/WXiangQian/laravel-dingtalk/zipball/5e5debf83bd101f43927a99e85bdeecdc133bc7d",
+            "reference": "5e5debf83bd101f43927a99e85bdeecdc133bc7d",
             "shasum": "",
             "mirrors": [
                 {
@@ -6614,7 +6618,7 @@
         "require": {
             "php": ">=7.0.0"
         },
-        "time": "2018-11-08T03:52:39+00:00",
+        "time": "2020-09-14T06:00:19+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -6632,7 +6636,7 @@
                 "email": "175023117@qq.com"
             }
         ],
-        "description": "This package makes it easy to send notifications using Dingtalk Bot"
+        "description": "This package makes it easy to send notifications using dingtalk Bot"
     },
     {
         "name": "wythe/logistics",

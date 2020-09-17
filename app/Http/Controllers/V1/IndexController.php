@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Jobs\DemoJob;
 use App\Services\ALiService;
 use App\Services\CaptchaVerifier;
+use App\Services\DingPushService;
 use App\Transformers\ExpressTransformer;
 use App\Transformers\UserInfoTransformer;
 use Illuminate\Http\Request;

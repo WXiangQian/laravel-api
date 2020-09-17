@@ -8,17 +8,24 @@ use Qian\DingTalk\Message;
 
 class DingPushService extends BasicService
 {
+    protected $token = '';
+
+    public function __construct()
+    {
+        $this->token = config('dingtalk.talk.token');
+    }
+
     /**
      * 推送text消息到钉钉群
      * @param string $content 推送内容
      * @return string
      */
-    public static function sendText($content = ' ')
+    public function sendText($content = ' ')
     {
         $DingTalk = new DingTalk();
         $message = new Message();
         $data = $message->text($content);
-        $res = $DingTalk->send($data);
+        $res = $DingTalk->send($this->token, $data);
 
         return $res;
     }
@@ -31,12 +38,12 @@ class DingPushService extends BasicService
      * @param string $picUrl    图片链接
      * @return string
      */
-    public static function sendLink($title = ' ', $text = ' ', $messageUrl, $picUrl = '')
+    public  function sendLink($title = ' ', $text = ' ', $messageUrl = '', $picUrl = '')
     {
         $DingTalk = new DingTalk();
         $message = new Message();
         $data = $message->link($title, $text, $messageUrl, $picUrl);
-        $res = $DingTalk->send($data);
+        $res = $DingTalk->send($this->token, $data);
 
         return $res;
     }

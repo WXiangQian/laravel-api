@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9748b0c14547d3309339364c03ecdb1e",
+    "content-hash": "3abb182d993dc9767c82feaa8fdd7254",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -1354,6 +1354,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1406,6 +1407,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -2005,6 +2007,7 @@
                 "cron",
                 "schedule"
             ],
+            "abandoned": "dragonmantank/cron-expression",
             "time": "2017-01-23T04:29:33+00:00"
         },
         {
@@ -2250,12 +2253,12 @@
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
+                "url": "https://github.com/predis/predis.git",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "url": "https://api.github.com/repos/predis/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": "",
                 "mirrors": [
@@ -4404,16 +4407,16 @@
         },
         {
             "name": "wxiangqian/laravel-dingtalk",
-            "version": "v1.0.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/WXiangQian/laravel-DingTalk.git",
-                "reference": "4c004e8825bfce96e9b135188eb3ba00f224beb4"
+                "url": "https://github.com/WXiangQian/laravel-dingtalk.git",
+                "reference": "5e5debf83bd101f43927a99e85bdeecdc133bc7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WXiangQian/laravel-DingTalk/zipball/4c004e8825bfce96e9b135188eb3ba00f224beb4",
-                "reference": "4c004e8825bfce96e9b135188eb3ba00f224beb4",
+                "url": "https://api.github.com/repos/WXiangQian/laravel-dingtalk/zipball/5e5debf83bd101f43927a99e85bdeecdc133bc7d",
+                "reference": "5e5debf83bd101f43927a99e85bdeecdc133bc7d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4441,8 +4444,8 @@
                     "email": "175023117@qq.com"
                 }
             ],
-            "description": "This package makes it easy to send notifications using Dingtalk Bot",
-            "time": "2018-11-08T03:52:39+00:00"
+            "description": "This package makes it easy to send notifications using dingtalk Bot",
+            "time": "2020-09-14T06:00:19+00:00"
         },
         {
             "name": "wythe/logistics",
@@ -6562,5 +6565,6 @@
     "platform": {
         "php": ">=7.0.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

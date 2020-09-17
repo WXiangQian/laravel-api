@@ -72,11 +72,22 @@ class Handler extends ExceptionHandler
             $errorinfo = array_slice($e->errors(), 0, 1, false);
             $msg = array_column($errorinfo, 0);
             $message = $msg[0];
+        } else {
+            //prod 环境，统一返回内部错误
+            $errFile = $e->getFile();
+            $errLine = $e->getLine();
+            $errMsg = $e->getMessage();
+            $data = [
+                'errorMsg' => $errMsg,
+                'errLine' => $errLine,
+                'errFile' => $errFile
+            ];
         }
 
         return response()->json([
             'code' => $code,
             'message' => $message ?? '内部服务器错误',
+            'data' => $data ?? [],
         ], 200);
 
         return $this->responseMessage($code);

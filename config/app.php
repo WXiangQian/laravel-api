@@ -110,8 +110,6 @@ return [
 
     'sina_key' => env('SINA_KEY'),
 
-    'dingtalk_token' => env('DINGTALK_TOKEN'),
-
     'cipher' => 'AES-256-CBC',
 
     /*

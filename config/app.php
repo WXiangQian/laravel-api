@@ -188,6 +188,7 @@ return [
         Vinkla\Hashids\HashidsServiceProvider::class,
         \Laravel\Tinker\TinkerServiceProvider::class,
         \Qian\DingTalk\DingTalkServiceProvider::class,
+        Hhxsv5\LaravelS\Illuminate\LaravelSServiceProvider::class,
     ],
 
     /*

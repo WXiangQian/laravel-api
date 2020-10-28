@@ -12,6 +12,7 @@
     "darkaonline/l5-swagger": "5.5.*",
     "fideloper/proxy": "~3.3",
     "geoip2/geoip2": "~2.0",
+    "hhxsv5/laravel-s": "~3.7.0",
     "jaeger/querylist": "^4.1",
     "jcc/laravel-vote": "^1.1",
     "laravel/framework": "5.5.*",

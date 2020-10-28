@@ -10,3 +10,7 @@ npm-debug.log
 yarn-error.log
 .env
 .DS_Store
+storage/laravels.conf
+storage/laravels.pid
+storage/laravels-timer-process.pid
+storage/laravels-timer-process.pid

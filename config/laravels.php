@@ -20,8 +20,8 @@ return [
     ],
     'event_handlers'           => [],
     'websocket'                => [
-        'enable' => false,
-        //'handler' => XxxWebSocketHandler::class,
+        'enable'  => true, // 看清楚，这里是true
+        'handler' => \App\Services\WebSocketService::class,
     ],
     'sockets'                  => [],
     'processes'                => [
@@ -59,6 +59,7 @@ return [
     ],
     'swoole'                   => [
         'daemonize'          => env('LARAVELS_DAEMONIZE', false),
+        // dispatch_mode只能设置为2、4、5，https://wiki.swoole.com/#/server/setting?id=dispatch_mode
         'dispatch_mode'      => 2,
         'reactor_num'        => env('LARAVELS_REACTOR_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 4),
         'worker_num'         => env('LARAVELS_WORKER_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 8),
@@ -91,5 +92,8 @@ return [
          * @see https://wiki.swoole.com/#/server/setting  Chinese
          * @see https://www.swoole.co.uk/docs/modules/swoole-server/configuration  English
          */
+        // 表示每60秒遍历一次，一个连接如果600秒内未向服务器发送任何数据，此连接将被强制关闭
+        'heartbeat_idle_time'      => 600,
+        'heartbeat_check_interval' => 60,
     ],
 ];

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('home.layouts.master');
 });
 
+Route::get('/test_websocket', function () {
+    return view('websocket');
+});
+
 /*Route::any('{all}', function () {
     return view('home.layouts.master');
 })->where(['all' => '.*']);*/

@@ -37,7 +37,9 @@ class WebSocketService implements WebSocketHandlerInterface
         //
         //        $server->push($frame->fd, $frame->data);e->fd, $frame->data, $frame->opcode, $frame->finish]);
 
-        $server->push($frame->fd, $frame->data);
+        swoole_timer_tick(2000,function() use($frame,$server){
+            $server->push($frame->fd, $frame->data);
+        });
 //        $arr = [
 //            'time' => date('Y-m-d H:i:s')
 //        ];

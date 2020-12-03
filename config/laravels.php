@@ -33,13 +33,14 @@ return [
         //],
     ],
     'timer'                    => [
-        'enable'          => env('LARAVELS_TIMER', false),
+        'enable'          => true,
         'jobs'            => [
             // Enable LaravelScheduleJob to run `php artisan schedule:run` every 1 minute, replace Linux Crontab
             //\Hhxsv5\LaravelS\Illuminate\LaravelScheduleJob::class,
             // Two ways to configure parameters:
             // [\App\Jobs\XxxCronJob::class, [1000, true]], // Pass in parameters when registering
             // \App\Jobs\XxxCronJob::class, // Override the corresponding method to return the configuration
+            \App\Jobs\Timer\TestCronJob::class, // 重载对应的方法来返回参数
         ],
         'max_wait_time'   => 5,
         // Enable the global lock to ensure that only one instance starts the timer when deploying multiple instances.
@@ -70,7 +71,7 @@ return [
         'max_request'        => env('LARAVELS_MAX_REQUEST', 8000),
         'open_tcp_nodelay'   => true,
         'pid_file'           => storage_path('laravels.pid'),
-        'log_file'           => storage_path(sprintf('logs/swoole-%s.log', date('Y-m'))),
+        'log_file'           => storage_path(sprintf('logs/swoole-%s.log', date('Y-m-d'))),
         'log_level'          => 4,
         'document_root'      => base_path('public'),
         'buffer_output_size' => 2 * 1024 * 1024,

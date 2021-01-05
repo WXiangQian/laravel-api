@@ -19,7 +19,7 @@
         // 端口和ip地址对应不要写错
         var webSocket = new WebSocket("ws://127.0.0.1:5200");
         webSocket.onopen = function (event) {
-            console.log('webSocket 链接成功');
+            console.log('webSocket 连接成功');
         };
         // 连接关闭时触发
         webSocket.onclose = function (event) {
